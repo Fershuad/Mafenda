@@ -5547,3 +5547,448 @@ Nueva sección de proceso de pedido
     min-width: 44px;
   }
 }
+
+/* -------------------------------------------
+Carrusel galería preview - Home
+------------------------------------------- */
+
+.ma-gallery-preview {
+  padding-bottom: 80px;
+}
+
+.ma-gallery-swiper {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 0 20px;
+}
+
+.ma-gallery-swiper .swiper-slide {
+  width: 420px;
+  height: 520px;
+}
+
+.ma-gallery-slide {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ma-gallery-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, .55) 100%);
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.ma-gallery-slide:hover::after {
+  opacity: 1;
+}
+
+.ma-gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .55s ease;
+}
+
+.ma-gallery-slide:hover img {
+  transform: scale(1.06);
+}
+
+/* flechas */
+.swiper-button-prev.ma-gallery-prev,
+.swiper-button-next.ma-gallery-next {
+  width: 52px;
+  height: 52px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .12);
+  color: #100b21;
+  top: 45%;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.swiper-button-prev.ma-gallery-prev:hover,
+.swiper-button-next.ma-gallery-next:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .18);
+}
+
+.swiper-button-prev.ma-gallery-prev::after,
+.swiper-button-next.ma-gallery-next::after {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.swiper-button-prev.ma-gallery-prev {
+  left: 24px;
+}
+
+.swiper-button-next.ma-gallery-next {
+  right: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .ma-gallery-swiper .swiper-slide {
+    width: 80vw;
+    height: 65vw;
+  }
+}
+
+/* -------------------------------------------
+Footer compacto Mafenda
+------------------------------------------- */
+
+.ma-footer-compact {
+  padding: 0;
+}
+
+.ma-footer-container {
+  padding-top: 70px;
+  padding-bottom: 32px;
+}
+
+.ma-footer-logo {
+  margin-bottom: 18px;
+}
+
+.ma-footer-text {
+  max-width: 440px;
+  margin-bottom: 26px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.ma-footer-wa {
+  margin-top: 4px;
+}
+
+.ma-footer-right {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 0.85fr;
+  gap: 34px;
+}
+
+.ma-footer-block h6 {
+  margin-bottom: 18px;
+  color: #100b21;
+  font-weight: 800;
+}
+
+.ma-footer-block ul {
+  padding: 0;
+  margin: 0;
+}
+
+.ma-footer-block ul li {
+  list-style: none;
+  margin-bottom: 10px;
+  color: rgba(16, 11, 33, 0.72);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.ma-footer-block ul li:last-child {
+  margin-bottom: 0;
+}
+
+.ma-footer-block ul li a {
+  color: rgba(16, 11, 33, 0.78) !important;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.ma-footer-block ul li a:hover {
+  opacity: 0.7;
+  transform: translateX(4px);
+}
+
+.ma-footer-social {
+  gap: 12px;
+}
+
+.ma-footer-social li {
+  margin-right: 0;
+}
+
+.ma-footer-social li a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(16, 11, 33, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ma-footer-bottom {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: solid 1px rgba(16, 11, 33, 0.12);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ma-footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(16, 11, 33, 0.62) !important;
+}
+
+/* responsive */
+@media screen and (max-width: 992px) {
+  .ma-footer-container {
+    padding-top: 60px;
+  }
+
+  .ma-footer-brand {
+    text-align: center;
+  }
+
+  .ma-footer-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ma-footer-right {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .ma-footer-social {
+    justify-content: center;
+  }
+
+  .ma-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ma-footer-right {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ma-footer-container {
+    padding-top: 55px;
+    padding-bottom: 28px;
+  }
+
+  .ma-footer-wa {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* -------------------------------------------
+Footer compacto Mafenda
+------------------------------------------- */
+
+.ma-footer-compact {
+  padding: 0;
+}
+
+.ma-footer-container {
+  max-width: 1180px;
+  padding-top: 68px;
+  padding-bottom: 34px;
+}
+
+/* Estructura general */
+.ma-footer-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 430px) minmax(520px, 570px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+/* Columna izquierda */
+.ma-footer-brand {
+  max-width: 430px;
+}
+
+.ma-footer-logo {
+  margin-bottom: 16px;
+}
+
+.ma-footer-text {
+  max-width: 410px;
+  margin-bottom: 28px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(16, 11, 33, 0.72) !important;
+}
+
+/* Botón WhatsApp */
+.ma-footer-wa {
+  min-width: 300px;
+  justify-content: center;
+  padding: 16px 28px;
+}
+
+/* Columna derecha */
+.ma-footer-right {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr 1fr;
+  gap: 44px;
+  align-items: start;
+}
+
+/* Bloques */
+.ma-footer-block h6 {
+  margin-bottom: 18px;
+  color: #100b21 !important;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.ma-footer-block ul {
+  padding: 0;
+  margin: 0;
+}
+
+.ma-footer-block ul li {
+  list-style: none;
+  margin-bottom: 9px;
+  color: rgba(16, 11, 33, 0.72) !important;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.ma-footer-block ul li:last-child {
+  margin-bottom: 0;
+}
+
+.ma-footer-block ul li a {
+  color: rgba(16, 11, 33, 0.78) !important;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.ma-footer-block ul li a:hover {
+  opacity: 0.7;
+  transform: translateX(4px);
+}
+
+/* Redes */
+.ma-footer-social {
+  display: flex;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+
+.ma-footer-social li {
+  margin: 0 !important;
+}
+
+.ma-footer-social li a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(16, 11, 33, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #100b21 !important;
+  font-size: 18px;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.ma-footer-social li a:hover {
+  transform: translateY(-4px);
+  background: rgba(16, 11, 33, 0.15);
+}
+
+/* Parte inferior */
+.ma-footer-bottom {
+  margin-top: 58px;
+  padding-top: 26px;
+  border-top: solid 1px rgba(16, 11, 33, 0.12);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ma-footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(16, 11, 33, 0.62) !important;
+}
+
+/* Responsive tablet */
+@media screen and (max-width: 992px) {
+  .ma-footer-container {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  .ma-footer-layout {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    text-align: center;
+  }
+
+  .ma-footer-brand {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ma-footer-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ma-footer-wa {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ma-footer-right {
+    max-width: 720px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    text-align: center;
+  }
+
+  .ma-footer-social {
+    justify-content: center;
+  }
+
+  .ma-footer-bottom {
+    margin-top: 42px;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Responsive móvil */
+@media screen and (max-width: 768px) {
+  .ma-footer-container {
+    padding-top: 55px;
+    padding-bottom: 28px;
+  }
+
+  .ma-footer-layout {
+    gap: 36px;
+  }
+
+  .ma-footer-right {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ma-footer-wa {
+    width: 100%;
+    max-width: 340px;
+  }
+}
