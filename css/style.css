@@ -5001,23 +5001,14 @@ html.is-animating .mil-menu-frame {
   color: #100b21 !important;
 }
 
-
-html,
-body {
-  overflow: hidden !important;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 /* 404 Mafenda - versión morado/rosa abierta */
 .ma-404 {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 160px 0 110px;
+  padding: 0 15px;
   background: linear-gradient(135deg, #FFA3EC, #A5A3FF, #AD95E8, #DB95E8) !important;
   color: #fff;
   isolation: isolate;
