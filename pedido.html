@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content="Haz tu pedido de figura personalizada paso a paso. Comparte tu referencia, presupuesto y detalles para recibir tu cotización.">
+
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
+    <link rel="stylesheet" href="css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="css/plugins/fancybox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Mafenda Creations | Hacer Pedido</title>
+
+    <style>
+        /* ─── Wizard layout ─────────────────────────── */
+        .ma-wizard-section {
+            min-height: 100vh;
+            padding: 120px 0 80px;
+            background:
+                radial-gradient(circle at 10% 15%, rgba(255, 163, 236, 0.22), transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(165, 163, 255, 0.20), transparent 30%),
+                linear-gradient(135deg, #fff 0%, #fff6fd 50%, #f3eeff 100%);
+        }
+
+        .ma-wizard-wrap {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        /* ─── Stepper header ────────────────────────── */
+        .ma-stepper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 60px;
+            gap: 0;
+        }
+
+        .ma-stepper-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            flex: 1;
+        }
+
+        .ma-stepper-item:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: rgba(16, 11, 33, 0.12);
+            transition: background 0.4s ease;
+            z-index: 0;
+        }
+
+        .ma-stepper-item.done:not(:last-child)::after,
+        .ma-stepper-item.active:not(:last-child)::after {
+            background: linear-gradient(90deg, #FFA3EC, #A5A3FF);
+        }
+
+        .ma-step-dot {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid rgba(16, 11, 33, 0.15);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 800;
+            color: rgba(16, 11, 33, 0.35);
+            position: relative;
+            z-index: 1;
+            transition: all 0.35s ease;
+        }
+
+        .ma-stepper-item.active .ma-step-dot {
+            border-color: transparent;
+            background: linear-gradient(135deg, #FFA3EC, #A5A3FF);
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(255, 163, 236, 0.35);
+            transform: scale(1.12);
+        }
+
+        .ma-stepper-item.done .ma-step-dot {
+            border-color: transparent;
+            background: linear-gradient(135deg, #A5A3FF, #AD95E8);
+            color: #fff;
+        }
+
+        .ma-step-label {
+            margin-top: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(16, 11, 33, 0.35);
+            text-align: center;
+            transition: color 0.3s;
+        }
+
+        .ma-stepper-item.active .ma-step-label {
+            color: #ad5ec9;
+        }
+
+        .ma-stepper-item.done .ma-step-label {
+            color: rgba(16, 11, 33, 0.6);
+        }
+
+        /* ─── Step card ─────────────────────────────── */
+        .ma-step-card {
+            display: none;
+            padding: 52px 56px;
+            border-radius: 40px;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(16, 11, 33, 0.08);
+            box-shadow: 0 28px 80px rgba(16, 11, 33, 0.10);
+            backdrop-filter: blur(10px);
+            animation: stepIn 0.45s ease both;
+        }
+
+        .ma-step-card.active {
+            display: block;
+        }
+
+        @keyframes stepIn {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ma-step-number {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: #ad5ec9;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .ma-step-number i {
+            font-size: 14px;
+        }
+
+        .ma-step-card h3 {
+            margin-bottom: 10px;
+            color: #100b21;
+        }
+
+        .ma-step-card>p {
+            margin-bottom: 36px;
+            color: rgba(16, 11, 33, 0.55);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* ─── Image upload ──────────────────────────── */
+        .ma-upload-zone {
+            position: relative;
+            width: 100%;
+            min-height: 260px;
+            border: 2px dashed rgba(16, 11, 33, 0.15);
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: border 0.3s, background 0.3s, transform 0.3s;
+            text-align: center;
+            padding: 40px 30px;
+            overflow: hidden;
+        }
+
+        .ma-upload-zone:hover,
+        .ma-upload-zone.drag-over {
+            border-color: #FFA3EC;
+            background: rgba(255, 163, 236, 0.05);
+            transform: scale(1.01);
+        }
+
+        .ma-upload-zone input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ma-upload-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFA3EC, #A5A3FF);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+            box-shadow: 0 12px 32px rgba(255, 163, 236, 0.28);
+        }
+
+        .ma-upload-zone h5 {
+            margin-bottom: 8px;
+            color: #100b21;
+        }
+
+        .ma-upload-zone p {
+            color: rgba(16, 11, 33, 0.45);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        #ma-img-preview {
+            display: none;
+            position: relative;
+            margin-top: 24px;
+            border-radius: 22px;
+            overflow: hidden;
+            max-height: 320px;
+        }
+
+        #ma-img-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 22px;
+        }
+
+        #ma-img-preview .ma-remove-img {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(16, 11, 33, 0.7);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: background 0.25s;
+        }
+
+        #ma-img-preview .ma-remove-img:hover {
+            background: rgba(16, 11, 33, 0.9);
+        }
+
+        /* ─── Budget selector ───────────────────────── */
+        .ma-budget-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .ma-budget-card {
+            padding: 24px 20px;
+            border-radius: 22px;
+            border: 2px solid rgba(16, 11, 33, 0.10);
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .ma-budget-card:hover {
+            border-color: rgba(255, 163, 236, 0.6);
+            box-shadow: 0 12px 36px rgba(255, 163, 236, 0.14);
+            transform: translateY(-4px);
+        }
+
+        .ma-budget-card.selected {
+            border-color: #FFA3EC;
+            background: linear-gradient(135deg, rgba(255, 163, 236, 0.08), rgba(165, 163, 255, 0.08));
+            box-shadow: 0 16px 44px rgba(255, 163, 236, 0.18);
+        }
+
+        .ma-budget-card.selected::after {
+            content: "\f058";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            color: #ad5ec9;
+            font-size: 18px;
+        }
+
+        .ma-budget-card .ma-budget-price {
+            font-size: 26px;
+            font-weight: 800;
+            color: #100b21;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .ma-budget-card .ma-budget-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #ad5ec9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .ma-budget-card p {
+            margin: 0;
+            font-size: 13px;
+            color: rgba(16, 11, 33, 0.55);
+            line-height: 1.5;
+        }
+
+        /* ─── Details form ──────────────────────────── */
+        .ma-detail-group {
+            margin-bottom: 22px;
+        }
+
+        .ma-detail-group label {
+            display: block;
+            margin-bottom: 9px;
+            color: rgba(16, 11, 33, 0.72);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .ma-detail-group input,
+        .ma-detail-group textarea,
+        .ma-detail-group select {
+            width: 100%;
+            height: 58px;
+            padding: 0 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(16, 11, 33, 0.12);
+            background: #fff;
+            color: #100b21;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0;
+            text-transform: none;
+            transition: border 0.25s, box-shadow 0.25s;
+            -webkit-appearance: none;
+        }
+
+        .ma-detail-group textarea {
+            height: 110px;
+            padding: 16px 20px;
+            resize: none;
+        }
+
+        .ma-detail-group input:focus,
+        .ma-detail-group textarea:focus,
+        .ma-detail-group select:focus {
+            border-color: rgba(255, 163, 236, 0.9);
+            box-shadow: 0 0 0 4px rgba(255, 163, 236, 0.14);
+            outline: none;
+        }
+
+        .ma-detail-group input::placeholder,
+        .ma-detail-group textarea::placeholder {
+            color: rgba(16, 11, 33, 0.32);
+        }
+
+        .ma-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        /* ─── Summary ───────────────────────────────── */
+        .ma-summary {
+            display: grid;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .ma-summary-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 18px 20px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(16, 11, 33, 0.08);
+        }
+
+        .ma-summary-icon {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFA3EC, #A5A3FF);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .ma-summary-row h6 {
+            margin-bottom: 4px;
+            color: rgba(16, 11, 33, 0.5);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .ma-summary-row p {
+            margin: 0;
+            color: #100b21;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        #ma-summary-img-wrap {
+            display: none;
+        }
+
+        #ma-summary-img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: cover;
+            border-radius: 14px;
+            border: 1px solid rgba(16, 11, 33, 0.08);
+        }
+
+        /* ─── Navigation buttons ────────────────────── */
+        .ma-wizard-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 36px;
+            gap: 16px;
+        }
+
+        .ma-btn-prev {
+            height: 58px;
+            padding: 0 28px;
+            border-radius: 999px;
+            border: 2px solid rgba(16, 11, 33, 0.14);
+            background: transparent;
+            color: rgba(16, 11, 33, 0.65);
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.28s ease;
+        }
+
+        .ma-btn-prev:hover {
+            border-color: rgba(16, 11, 33, 0.28);
+            color: #100b21;
+        }
+
+        .ma-btn-prev.hidden {
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .ma-btn-next {
+            height: 64px;
+            padding: 0 20px 0 36px;
+            border-radius: 999px;
+            border: none;
+            background: linear-gradient(135deg, #100b21 0%, #2a1840 100%);
+            color: #fff;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 14px 40px rgba(16, 11, 33, 0.22);
+            transition: all 0.28s ease;
+        }
+
+        .ma-btn-next:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 50px rgba(16, 11, 33, 0.28);
+        }
+
+        .ma-btn-next.send {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            box-shadow: 0 14px 40px rgba(37, 211, 102, 0.3);
+        }
+
+        .ma-btn-next.send:hover {
+            box-shadow: 0 18px 50px rgba(37, 211, 102, 0.38);
+        }
+
+        .ma-btn-next-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+        }
+
+        /* ─── Responsive ────────────────────────────── */
+        @media screen and (max-width: 768px) {
+            .ma-wizard-section {
+                padding: 100px 0 60px;
+            }
+
+            .ma-step-card {
+                padding: 36px 24px;
+                border-radius: 28px;
+            }
+
+            .ma-budget-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ma-row-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .ma-stepper {
+                gap: 0;
+            }
+
+            .ma-step-label {
+                display: none;
+            }
+
+            .ma-stepper-item:not(:last-child)::after {
+                top: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- wrapper -->
+    <div class="mil-wrapper" id="top">
+
+        <!-- cursor -->
+        <div class="mil-ball">
+            <span class="mil-icon-1">
+                <svg viewBox="0 0 128 128">
+                    <path
+                        d="M106.1,41.9c-1.2-1.2-3.1-1.2-4.2,0c-1.2,1.2-1.2,3.1,0,4.2L116.8,61H11.2l14.9-14.9c1.2-1.2,1.2-3.1,0-4.2	c-1.2-1.2-3.1-1.2-4.2,0l-20,20c-1.2,1.2-1.2,3.1,0,4.2l20,20c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9c1.2-1.2,1.2-3.1,0-4.2	L11.2,67h105.5l-14.9,14.9c-1.2,1.2-1.2,3.1,0,4.2c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9l20-20c1.2-1.2,1.2-3.1,0-4.2L106.1,41.9	z" />
+                </svg>
+            </span>
+            <div class="mil-more-text">Más</div>
+            <div class="mil-choose-text">Elige</div>
+        </div>
+
+        <!-- preloader -->
+        <div class="mil-preloader">
+            <div class="mil-preloader-animation">
+                <div class="mil-pos-abs mil-animation-1">
+                    <p class="mil-h3 mil-muted mil-thin">Figuras</p>
+                    <p class="mil-h3 mil-muted"><b>Hechas</b></p>
+                    <p class="mil-h3 mil-muted mil-thin">Con Amor</p>
+                </div>
+                <div class="mil-pos-abs mil-animation-2">
+                    <div class="mil-reveal-frame">
+                        <p class="mil-reveal-box"></p>
+                        <p class="mil-h3 mil-muted mil-thin">Mafenda.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- progreso scroll -->
+        <div class="mil-progress-track">
+            <div class="mil-progress"></div>
+        </div>
+
+        <!-- menú -->
+        <div class="mil-menu-frame">
+            <div class="mil-frame-top">
+                <a href="index.html" class="mil-logo">Mafenda Creations</a>
+                <div class="mil-menu-btn"><span></span></div>
+            </div>
+            <div class="container">
+                <div class="mil-menu-content">
+                    <div class="row">
+                        <div class="col-xl-5">
+                            <nav class="mil-main-menu" id="swupMenu">
+                                <ul>
+                                    <li><a href="index.html">Inicio</a></li>
+                                    <li><a href="portfolio-1.html">Galería</a></li>
+                                    <li class="mil-active"><a href="pedido.html">Pedido</a></li>
+                                    <li><a href="contact.html">Contacto</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-xl-7">
+                            <div class="mil-menu-right-frame">
+                                <div class="mil-animation-in">
+                                    <div class="mil-animation-frame">
+                                        <div class="mil-animation mil-position-1 mil-scale" data-value-1="2"
+                                            data-value-2="2"></div>
+                                    </div>
+                                </div>
+                                <div class="mil-menu-right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mil-curtain"></div>
+
+        <!-- barra fija -->
+        <div class="mil-frame">
+            <div class="mil-frame-top">
+                <a href="index.html" class="mil-logo">Mafenda Creations</a>
+                <div class="mil-menu-btn"><span></span></div>
+            </div>
+            <div class="mil-frame-bottom">
+                <div class="mil-current-page"></div>
+                <div class="mil-back-to-top">
+                    <a href="#top" class="mil-link mil-dark mil-arrow-place">
+                        <span>Volver arriba</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- contenido -->
+        <div class="mil-content">
+            <div id="swupMain" class="mil-main-transition">
+
+                <!-- ─── WIZARD ─────────────────────────── -->
+                <section class="ma-wizard-section">
+                    <div class="container">
+                        <div class="ma-wizard-wrap">
+
+                            <!-- título de la página -->
+                            <div class="mil-center mil-mb-30" style="margin-bottom: 48px;">
+                                <h2 style="color:#100b21;margin-bottom:12px;">Haz tu <span
+                                        style="font-weight:300;">pedido</span></h2>
+                                <p style="color:rgba(16,11,33,.55);font-size:17px;max-width:540px;margin:0 auto;">
+                                    Completa los 4 pasos y te enviaré una cotización por WhatsApp.</p>
+                            </div>
+
+                            <!-- stepper -->
+                            <div class="ma-stepper" id="maStepper">
+                                <div class="ma-stepper-item active" data-step="1">
+                                    <div class="ma-step-dot">1</div>
+                                    <span class="ma-step-label">Referencia</span>
+                                </div>
+                                <div class="ma-stepper-item" data-step="2">
+                                    <div class="ma-step-dot">2</div>
+                                    <span class="ma-step-label">Presupuesto</span>
+                                </div>
+                                <div class="ma-stepper-item" data-step="3">
+                                    <div class="ma-step-dot">3</div>
+                                    <span class="ma-step-label">Detalles</span>
+                                </div>
+                                <div class="ma-stepper-item" data-step="4">
+                                    <div class="ma-step-dot">4</div>
+                                    <span class="ma-step-label">Confirmar</span>
+                                </div>
+                            </div>
+
+                            <!-- ── PASO 1: Imagen de referencia ──────── -->
+                            <div class="ma-step-card active" id="step1">
+
+                                <div class="ma-step-number">
+                                    <i class="fas fa-image"></i> Paso 1 de 4
+                                </div>
+                                <h3>Imagen de referencia</h3>
+                                <p>Sube una foto clara de tu personaje, mascota o idea. Cuanto más detallada, mejor será
+                                    tu figura.</p>
+
+                                <div class="ma-upload-zone" id="maUploadZone">
+                                    <input type="file" id="maFileInput" accept="image/*">
+                                    <div class="ma-upload-icon">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                    </div>
+                                    <h5>Arrastra tu imagen aquí</h5>
+                                    <p>o haz clic para elegir un archivo<br><span
+                                            style="font-size:12px;opacity:.7;">JPG, PNG, WEBP · Máx. 10 MB</span></p>
+                                </div>
+
+                                <div id="ma-img-preview">
+                                    <img id="ma-preview-img" src="" alt="Vista previa">
+                                    <button class="ma-remove-img" id="maRemoveImg" title="Eliminar imagen">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+
+                                <div class="ma-wizard-nav">
+                                    <button class="ma-btn-prev hidden" id="prev1">
+                                        <i class="fas fa-arrow-left"></i> Anterior
+                                    </button>
+                                    <button class="ma-btn-next" id="next1">
+                                        Siguiente
+                                        <div class="ma-btn-next-icon"><i class="fas fa-arrow-right"></i></div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- ── PASO 2: Presupuesto ────────────────── -->
+                            <div class="ma-step-card" id="step2">
+
+                                <div class="ma-step-number">
+                                    <i class="fas fa-dollar-sign"></i> Paso 2 de 4
+                                </div>
+                                <h3>¿Cuál es tu presupuesto?</h3>
+                                <p>Selecciona el rango que mejor se adapta a lo que buscas. El precio varía según el
+                                    tamaño y los detalles.</p>
+
+                                <div class="ma-budget-grid" id="maBudgetGrid">
+
+                                    <div class="ma-budget-card" data-value="$350 – $500 MXN (Figura pequeña, ~10 cm)">
+                                        <span class="ma-budget-label">Básico</span>
+                                        <span class="ma-budget-price">$350 – $500</span>
+                                        <p>Figura pequeña (~10 cm). Ideal para llaveros y miniaturas con detalles
+                                            simples.</p>
+                                    </div>
+
+                                    <div class="ma-budget-card" data-value="$600 – $900 MXN (Figura mediana, ~15 cm)">
+                                        <span class="ma-budget-label">Estándar</span>
+                                        <span class="ma-budget-price">$600 – $900</span>
+                                        <p>Figura mediana (~15 cm). Más detalles, accesorios y mayor realismo.</p>
+                                    </div>
+
+                                    <div class="ma-budget-card"
+                                        data-value="$1,000 – $1,500 MXN (Figura grande, ~20 cm)">
+                                        <span class="ma-budget-label">Premium</span>
+                                        <span class="ma-budget-price">$1,000 – $1,500</span>
+                                        <p>Figura grande (~20 cm). Alta fidelidad, muchos accesorios y acabados premium.
+                                        </p>
+                                    </div>
+
+                                    <div class="ma-budget-card" data-value="$1,600 MXN o más (Figura XL personalizada)">
+                                        <span class="ma-budget-label">Personalizado</span>
+                                        <span class="ma-budget-price">$1,600+</span>
+                                        <p>Figura XL o proyecto especial. Precio según complejidad y tamaño deseado.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="ma-wizard-nav">
+                                    <button class="ma-btn-prev" id="prev2">
+                                        <i class="fas fa-arrow-left"></i> Anterior
+                                    </button>
+                                    <button class="ma-btn-next" id="next2">
+                                        Siguiente
+                                        <div class="ma-btn-next-icon"><i class="fas fa-arrow-right"></i></div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- ── PASO 3: Detalles adicionales ───────── -->
+                            <div class="ma-step-card" id="step3">
+
+                                <div class="ma-step-number">
+                                    <i class="fas fa-paint-brush"></i> Paso 3 de 4
+                                </div>
+                                <h3>Detalles de tu figura</h3>
+                                <p>Cuéntanos todo lo que necesitamos para hacerla exactamente como la imaginas.</p>
+
+                                <div class="ma-detail-group">
+                                    <label for="det-nombre">Tu nombre *</label>
+                                    <input type="text" id="det-nombre" placeholder="¿Cómo te llamamos?"
+                                        autocomplete="name" required>
+                                </div>
+
+                                <div class="ma-row-2">
+                                    <div class="ma-detail-group">
+                                        <label for="det-personaje">Personaje / idea *</label>
+                                        <input type="text" id="det-personaje" placeholder="Ej. Naruto, mi perro Max..."
+                                            required>
+                                    </div>
+                                    <div class="ma-detail-group">
+                                        <label for="det-categoria">Categoría</label>
+                                        <select id="det-categoria">
+                                            <option value="">Selecciona...</option>
+                                            <option>Anime</option>
+                                            <option>Videojuego</option>
+                                            <option>Serie / película</option>
+                                            <option>Mascota</option>
+                                            <option>Persona real</option>
+                                            <option>Idea propia</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="ma-row-2">
+                                    <div class="ma-detail-group">
+                                        <label for="det-colores">Colores principales</label>
+                                        <input type="text" id="det-colores" placeholder="Ej. naranja, negro, rojo...">
+                                    </div>
+                                    <div class="ma-detail-group">
+                                        <label for="det-pose">Pose deseada</label>
+                                        <input type="text" id="det-pose"
+                                            placeholder="Ej. de pie, sentado, corriendo...">
+                                    </div>
+                                </div>
+
+                                <div class="ma-detail-group">
+                                    <label for="det-accesorios">Accesorios u objetos especiales</label>
+                                    <input type="text" id="det-accesorios"
+                                        placeholder="Ej. katana, sombrero, mochila, collar...">
+                                </div>
+
+                                <div class="ma-detail-group">
+                                    <label for="det-extra">Notas adicionales</label>
+                                    <textarea id="det-extra"
+                                        placeholder="Cualquier detalle extra que quieras que tomemos en cuenta..."></textarea>
+                                </div>
+
+                                <div class="ma-wizard-nav">
+                                    <button class="ma-btn-prev" id="prev3">
+                                        <i class="fas fa-arrow-left"></i> Anterior
+                                    </button>
+                                    <button class="ma-btn-next" id="next3">
+                                        Revisar pedido
+                                        <div class="ma-btn-next-icon"><i class="fas fa-arrow-right"></i></div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- ── PASO 4: Resumen + Enviar ───────────── -->
+                            <div class="ma-step-card" id="step4">
+
+                                <div class="ma-step-number">
+                                    <i class="fab fa-whatsapp"></i> Paso 4 de 4
+                                </div>
+                                <h3>Confirma tu pedido</h3>
+                                <p>Revisa el resumen y cuando estés listo, envíanos tu solicitud por WhatsApp. Te
+                                    cotizamos a la brevedad.</p>
+
+                                <div class="ma-summary">
+
+                                    <div id="ma-summary-img-wrap" class="ma-summary-row"
+                                        style="flex-direction:column;align-items:flex-start;gap:12px;">
+                                        <div style="display:flex;align-items:center;gap:14px;">
+                                            <div class="ma-summary-icon"><i class="fas fa-image"></i></div>
+                                            <div>
+                                                <h6>Imagen de referencia</h6>
+                                                <p>Adjuntada correctamente ✓</p>
+                                            </div>
+                                        </div>
+                                        <img id="ma-summary-img" src="" alt="Referencia">
+                                    </div>
+
+                                    <div class="ma-summary-row">
+                                        <div class="ma-summary-icon"><i class="fas fa-dollar-sign"></i></div>
+                                        <div>
+                                            <h6>Presupuesto seleccionado</h6>
+                                            <p id="sum-budget">—</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="ma-summary-row">
+                                        <div class="ma-summary-icon"><i class="fas fa-user"></i></div>
+                                        <div>
+                                            <h6>Nombre del cliente</h6>
+                                            <p id="sum-nombre">—</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="ma-summary-row">
+                                        <div class="ma-summary-icon"><i class="fas fa-star"></i></div>
+                                        <div>
+                                            <h6>Personaje / idea</h6>
+                                            <p id="sum-personaje">—</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="ma-summary-row" id="sum-extra-wrap" style="display:none;">
+                                        <div class="ma-summary-icon"><i class="fas fa-sticky-note"></i></div>
+                                        <div>
+                                            <h6>Detalles adicionales</h6>
+                                            <p id="sum-extra">—</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="ma-wizard-nav">
+                                    <button class="ma-btn-prev" id="prev4">
+                                        <i class="fas fa-arrow-left"></i> Anterior
+                                    </button>
+                                    <button class="ma-btn-next send" id="btnSend">
+                                        Enviar cotización
+                                        <div class="ma-btn-next-icon"><i class="fab fa-whatsapp"></i></div>
+                                    </button>
+                                </div>
+
+                            </div>
+                            <!-- fin wizard -->
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ─── FOOTER ───────────────────────── -->
+                <footer class="mil-gradient-bg ma-footer-compact">
+                    <div class="mi-invert-fix">
+                        <div class="container ma-footer-container">
+                            <div class="ma-footer-layout">
+                                <div class="ma-footer-brand">
+                                    <div class="mil-footer-logo-text ma-footer-logo">Mafenda</div>
+                                    <p class="ma-footer-text">Figuras personalizadas hechas a mano, inspiradas en tus
+                                        personajes, mascotas o ideas favoritas.</p>
+                                    <a href="https://wa.me/5215519106686?text=Hola,%20quiero%20hacer%20un%20pedido"
+                                        target="_blank" rel="noopener noreferrer" class="mil-wa-btn ma-footer-wa">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <span>Hacer pedido por WhatsApp</span>
+                                    </a>
+                                </div>
+                                <div class="ma-footer-right">
+                                    <div class="ma-footer-block">
+                                        <h6>Explorar</h6>
+                                        <ul>
+                                            <li><a href="index.html">Inicio</a></li>
+                                            <li><a href="portfolio-1.html">Galería</a></li>
+                                            <li><a href="contact.html">Contacto</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="ma-footer-block">
+                                        <h6>Síguenos</h6>
+                                        <ul class="mil-social-icons ma-footer-social">
+                                            <li><a href="#" target="_blank" aria-label="Instagram"><i
+                                                        class="fab fa-instagram"></i></a></li>
+                                            <li><a href="#" target="_blank" aria-label="TikTok"><i
+                                                        class="fab fa-tiktok"></i></a></li>
+                                            <li><a href="#" target="_blank" aria-label="Facebook"><i
+                                                        class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#" target="_blank" aria-label="YouTube"><i
+                                                        class="fab fa-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ma-footer-bottom">
+                                <p>© 2026 Mafenda. Todos los derechos reservados.</p>
+                                <p>Hecho con amor para los coleccionistas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+        <!-- contenido end -->
+
+    </div>
+    <!-- wrapper end -->
+
+    <script src="js/plugins/jquery.min.js"></script>
+    <script src="js/plugins/swup.min.js"></script>
+    <script src="js/plugins/swiper.min.js"></script>
+    <script src="js/plugins/fancybox.min.js"></script>
+    <script src="js/plugins/gsap.min.js"></script>
+    <script src="js/plugins/smooth-scroll.js"></script>
+    <script src="js/plugins/ScrollTrigger.min.js"></script>
+    <script src="js/plugins/ScrollTo.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        /* ─── Estado del wizard ─────────────────────── */
+        const state = {
+            step: 1,
+            imageFile: null,
+            imageDataUrl: null,
+            budget: null,
+            nombre: '',
+            personaje: '',
+            categoria: '',
+            colores: '',
+            pose: '',
+            accesorios: '',
+            extra: ''
+        };
+
+        /* ─── Helpers ───────────────────────────────── */
+        function goToStep(n) {
+            document.querySelectorAll('.ma-step-card').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.ma-stepper-item').forEach((item, i) => {
+                item.classList.remove('active', 'done');
+                if (i + 1 < n) item.classList.add('done');
+                if (i + 1 === n) item.classList.add('active');
+            });
+            document.getElementById('step' + n).classList.add('active');
+            state.step = n;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* ─── Paso 1: imagen ────────────────────────── */
+        const fileInput = document.getElementById('maFileInput');
+        const uploadZone = document.getElementById('maUploadZone');
+        const preview = document.getElementById('ma-img-preview');
+        const previewImg = document.getElementById('ma-preview-img');
+        const removeBtn = document.getElementById('maRemoveImg');
+
+        fileInput.addEventListener('change', function () {
+            if (this.files && this.files[0]) handleFile(this.files[0]);
+        });
+
+        uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('drag-over'); });
+        uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('drag-over'));
+        uploadZone.addEventListener('drop', e => {
+            e.preventDefault();
+            uploadZone.classList.remove('drag-over');
+            if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+        });
+
+        function handleFile(file) {
+            if (!file.type.startsWith('image/')) { alert('Por favor selecciona una imagen válida.'); return; }
+            state.imageFile = file;
+            const reader = new FileReader();
+            reader.onload = ev => {
+                state.imageDataUrl = ev.target.result;
+                previewImg.src = ev.target.result;
+                preview.style.display = 'block';
+                uploadZone.style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        removeBtn.addEventListener('click', () => {
+            state.imageFile = null;
+            state.imageDataUrl = null;
+            fileInput.value = '';
+            preview.style.display = 'none';
+            uploadZone.style.display = 'flex';
+        });
+
+        document.getElementById('next1').addEventListener('click', () => {
+            goToStep(2);
+        });
+
+        /* ─── Paso 2: presupuesto ───────────────────── */
+        document.querySelectorAll('.ma-budget-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.ma-budget-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                state.budget = card.dataset.value;
+            });
+        });
+
+        document.getElementById('prev2').addEventListener('click', () => goToStep(1));
+        document.getElementById('next2').addEventListener('click', () => {
+            if (!state.budget) { alert('Por favor selecciona un rango de presupuesto.'); return; }
+            goToStep(3);
+        });
+
+        /* ─── Paso 3: detalles ──────────────────────── */
+        document.getElementById('prev3').addEventListener('click', () => goToStep(2));
+        document.getElementById('next3').addEventListener('click', () => {
+            state.nombre = document.getElementById('det-nombre').value.trim();
+            state.personaje = document.getElementById('det-personaje').value.trim();
+            state.categoria = document.getElementById('det-categoria').value;
+            state.colores = document.getElementById('det-colores').value.trim();
+            state.pose = document.getElementById('det-pose').value.trim();
+            state.accesorios = document.getElementById('det-accesorios').value.trim();
+            state.extra = document.getElementById('det-extra').value.trim();
+
+            if (!state.nombre) { alert('Por favor ingresa tu nombre.'); return; }
+            if (!state.personaje) { alert('Por favor indica el personaje o la idea de tu figura.'); return; }
+
+            // Llenar resumen
+            document.getElementById('sum-budget').textContent = state.budget;
+            document.getElementById('sum-nombre').textContent = state.nombre;
+            document.getElementById('sum-personaje').textContent = state.personaje + (state.categoria ? ' · ' + state.categoria : '');
+
+            const extraParts = [state.colores && 'Colores: ' + state.colores, state.pose && 'Pose: ' + state.pose, state.accesorios && 'Accesorios: ' + state.accesorios, state.extra].filter(Boolean);
+            if (extraParts.length) {
+                document.getElementById('sum-extra').textContent = extraParts.join(' | ');
+                document.getElementById('sum-extra-wrap').style.display = 'flex';
+            }
+
+            if (state.imageDataUrl) {
+                document.getElementById('ma-summary-img').src = state.imageDataUrl;
+                document.getElementById('ma-summary-img-wrap').style.display = 'flex';
+            }
+
+            goToStep(4);
+        });
+
+        /* ─── Paso 4: enviar ────────────────────────── */
+        document.getElementById('prev4').addEventListener('click', () => goToStep(3));
+        document.getElementById('btnSend').addEventListener('click', () => {
+            const numero = '5215519106686';
+            let msg = `¡Hola! Quiero cotizar una figura personalizada 🎨\n\n`;
+            msg += `👤 *Nombre:* ${state.nombre}\n`;
+            msg += `✨ *Personaje / idea:* ${state.personaje}`;
+            if (state.categoria) msg += ` (${state.categoria})`;
+            msg += `\n💰 *Presupuesto:* ${state.budget}\n`;
+            if (state.colores) msg += `🎨 *Colores:* ${state.colores}\n`;
+            if (state.pose) msg += `🕺 *Pose:* ${state.pose}\n`;
+            if (state.accesorios) msg += `🛡️ *Accesorios:* ${state.accesorios}\n`;
+            if (state.extra) msg += `📝 *Notas:* ${state.extra}\n`;
+            if (state.imageDataUrl) msg += `\n📷 (Adjunto imagen de referencia en este chat)`;
+            msg += `\n\n¡Espero tu cotización! 😊`;
+
+            window.open(`https://wa.me/${numero}?text=${encodeURIComponent(msg)}`, '_blank');
+        });
+    </script>
+
+</body>
+
+</html>
