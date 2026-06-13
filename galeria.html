@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.min.css">
+    <!-- fancybox css -->
+    <link rel="stylesheet" href="css/plugins/fancybox.min.css">
+    <!-- ashley scss -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- gallery custom css -->
+    <link rel="stylesheet" href="css/galeria.css">
+    <!-- page name -->
+    <title>Mafenda Galería</title>
+
+</head>
+
+<body>
+
+    <!-- wrapper -->
+    <div class="mil-wrapper" id="top">
+
+        <!-- cursor -->
+        <div class="mil-ball">
+            <span class="mil-icon-1">
+                <svg viewBox="0 0 128 128">
+                    <path
+                        d="M106.1,41.9c-1.2-1.2-3.1-1.2-4.2,0c-1.2,1.2-1.2,3.1,0,4.2L116.8,61H11.2l14.9-14.9c1.2-1.2,1.2-3.1,0-4.2 c-1.2-1.2-3.1-1.2-4.2,0l-20,20c-1.2,1.2-1.2,3.1,0,4.2l20,20c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9c1.2-1.2,1.2-3.1,0-4.2 L11.2,67h105.5l-14.9,14.9c-1.2,1.2-1.2,3.1,0,4.2c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9l20-20c1.2-1.2,1.2-3.1,0-4.2L106.1,41.9 z" />
+                </svg>
+            </span>
+            <div class="mil-more-text">Mas</div>
+            <div class="mil-choose-text">Ver</div>
+        </div>
+        <!-- cursor end -->
+
+        <!-- preloader -->
+        <div class="mil-preloader">
+            <div class="mil-preloader-animation">
+                <div class="mil-pos-abs mil-animation-1">
+                    <p class="mil-h3 mil-muted mil-thin">Figuras</p>
+                    <p class="mil-h3 mil-muted"><b>Hechas</b></p>
+                    <p class="mil-h3 mil-muted mil-thin">Con Amor</p>
+                </div>
+                <div class="mil-pos-abs mil-animation-2">
+                    <div class="mil-reveal-frame">
+                        <p class="mil-reveal-box"></p>
+                        <p class="mil-h3 mil-muted mil-thin">Mafenda.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- preloader end -->
+
+        <!-- scrollbar progress -->
+        <div class="mil-progress-track">
+            <div class="mil-progress"></div>
+        </div>
+        <!-- scrollbar progress end -->
+
+        <!-- menu -->
+        <div class="mil-menu-frame">
+            <div class="mil-frame-top">
+                <a href="index.html" class="mil-logo">Mafenda Creations</a>
+                <div class="mil-menu-btn">
+                    <span></span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="mil-menu-content">
+                    <div class="row">
+                        <div class="col-xl-5">
+
+                            <nav class="mil-main-menu" id="swupMenu">
+                                <ul>
+                                    <li><a href="index.html">Inicio</a></li>
+                                    <li><a href="pedido.html">Pedido</a></li>
+                                    <li class="mil-active"><a href="galeria.html">Galería</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="contact.html">Contacto</a></li>
+                                </ul>
+                            </nav>
+
+                        </div>
+                        <div class="col-xl-7">
+                            <div class="mil-menu-right-frame">
+                                <div class="mil-animation-in">
+                                    <div class="mil-animation-frame">
+                                        <div class="mil-animation mil-position-1 mil-scale" data-value-1="2"
+                                            data-value-2="2"></div>
+                                    </div>
+                                </div>
+                                <div class="mil-menu-right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- menu end -->
+
+        <!-- curtain -->
+        <div class="mil-curtain"></div>
+        <!-- curtain end -->
+
+        <!-- frame -->
+        <div class="mil-frame">
+            <div class="mil-frame-top">
+                <a href="index.html" class="mil-logo">Mafenda Creations</a>
+                <div class="mil-menu-btn">
+                    <span></span>
+                </div>
+            </div>
+            <div class="mil-frame-bottom">
+                <div class="mil-current-page"></div>
+                <div class="mil-back-to-top">
+                    <a href="#top" class="mil-link mil-dark mil-arrow-place">
+                        <span>Volver arriba</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- frame end -->
+
+        <!-- content -->
+        <div class="mil-content">
+            <div id="swupMain" class="mil-main-transition">
+
+                <!-- banner -->
+                <div class="mil-inner-banner mil-p-120-0">
+                    <div class="container">
+                        <div class="mil-animation-frame">
+                            <div class="mil-animation mil-position-4 mil-dark mil-scale" data-value-1="6"
+                                data-value-2="1.4"></div>
+                        </div>
+                        <h1 class="mil-mb-30 mil-up">Nuestra <span class="mil-thin">Galería</span></h1>
+                        <p class="mil-up mil-text-lg">Explora nuestras figuras personalizadas en un recorrido visual
+                            inmersivo.</p>
+                    </div>
+                </div>
+                <!-- banner end -->
+
+                <!-- gallery masonry -->
+                <section id="gallery">
+                    <div class="container mil-p-0-120">
+
+                        <!-- Filter Container -->
+                        <div class="ma-filter-container mil-up">
+
+                            <!-- Main Categories -->
+                            <div class="ma-filter-bar">
+                                <button class="ma-filter-btn active" data-filter="all">Todos</button>
+                                <button class="ma-filter-btn" data-filter="cat-anime"
+                                    data-target="subfilter-anime">Anime</button>
+                                <button class="ma-filter-btn" data-filter="cat-series"
+                                    data-target="subfilter-series">Series</button>
+                                <button class="ma-filter-btn" data-filter="cat-mascotas">Mascotas</button>
+                                <button class="ma-filter-btn" data-filter="cat-juegos"
+                                    data-target="subfilter-juegos">Videojuegos</button>
+                                <button class="ma-filter-btn" data-filter="cat-personalizadas">Personalizadas</button>
+                            </div>
+
+                            <!-- Subcategories for Anime -->
+                            <div class="ma-subfilter-bar" id="subfilter-anime">
+                                <button class="ma-subfilter-btn active" data-filter="cat-anime">Todos los
+                                    Animes</button>
+                                <button class="ma-subfilter-btn" data-filter="sub-naruto">Naruto</button>
+                                <button class="ma-subfilter-btn" data-filter="sub-dragonball">Dragon Ball</button>
+                                <button class="ma-subfilter-btn" data-filter="sub-onepiece">One Piece</button>
+                            </div>
+
+                            <!-- Subcategories for Series -->
+                            <div class="ma-subfilter-bar" id="subfilter-series">
+                                <button class="ma-subfilter-btn active" data-filter="cat-series">Todas las
+                                    Series</button>
+                                <button class="ma-subfilter-btn" data-filter="sub-breakingbad">Breaking Bad</button>
+                                <button class="ma-subfilter-btn" data-filter="sub-stranger">Stranger Things</button>
+                            </div>
+
+                            <!-- Subcategories for Videojuegos -->
+                            <div class="ma-subfilter-bar" id="subfilter-juegos">
+                                <button class="ma-subfilter-btn active" data-filter="cat-juegos">Todos los
+                                    Juegos</button>
+                                <button class="ma-subfilter-btn" data-filter="sub-zelda">Zelda</button>
+                                <button class="ma-subfilter-btn" data-filter="sub-mario">Super Mario</button>
+                            </div>
+
+                        </div>
+
+                        <div class="ma-gallery-masonry mil-up" id="gallery-masonry">
+
+                            <!-- Figure 1 - Naruto -->
+                            <div data-image="img/works/naruto/naruto.png"
+                                data-description="Impresionante figura de Naruto Uzumaki modelada a mano en porcelana fría. Cada detalle de su chamarra naranja, su cabello puntiagudo y la cinta de la aldea de la hoja fueron cuidadosamente esculpidos."
+                                class="ma-gallery-item cat-anime sub-naruto">
+                                <img src="img/works/naruto/naruto.png" alt="Naruto Uzumaki">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Naruto Uzumaki</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / Naruto</div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 2 - Sasuke -->
+                            <div data-image="img/works/naruto/sasuke.png"
+                                data-description="Figura de Sasuke Uchiha con su atuendo clásico. Esculpido con gran nivel de detalle, desde la mirada fría hasta el símbolo del clan Uchiha en su espalda."
+                                class="ma-gallery-item cat-anime sub-naruto">
+                                <img src="img/works/naruto/sasuke.png" alt="Sasuke Uchiha">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Sasuke Uchiha</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / Naruto</div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 3 - Orochimaru -->
+                            <div data-image="img/works/naruto/orochimaru.png"
+                                data-description="Escultura del legendario Sannin Orochimaru. La figura captura su aura oscura, los rasgos pálidos de serpiente y su característico atuendo con precisión."
+                                class="ma-gallery-item cat-anime sub-naruto">
+                                <img src="img/works/naruto/orochimaru.png" alt="Orochimaru">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Orochimaru</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / Naruto</div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 4 - Kakashi -->
+                            <div data-image="img/works/naruto/kakashi.png"
+                                data-description="Figura de Kakashi Hatake, el ninja que copia. Se incluye su icónica máscara, el protector levantado y su chaleco táctico verde con detalles esculpidos de alta calidad."
+                                class="ma-gallery-item cat-anime sub-naruto">
+                                <img src="img/works/naruto/kakashi.png" alt="Kakashi Hatake">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Kakashi Hatake</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / Naruto</div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 5 - Itachi -->
+                            <div data-image="img/works/naruto/itachi.png"
+                                data-description="Elegante figura de Itachi Uchiha portando la capa de Akatsuki. Los pliegues de la túnica y la textura de las nubes rojas le dan un aspecto sumamente profesional y estético."
+                                class="ma-gallery-item cat-anime sub-naruto">
+                                <img src="img/works/naruto/itachi.png" alt="Itachi Uchiha">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Itachi Uchiha</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / Naruto</div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 6 - Generic 1 -->
+                            <div data-image="img/works/1.jpg"
+                                data-description="Una figura excepcional inspirada en Walter White (Heisenberg). Cuenta con los icónicos lentes, sombrero y una expresión que captura perfectamente al personaje."
+                                class="ma-gallery-item cat-series sub-breakingbad">
+                                <img src="img/works/1.jpg" alt="Heisenberg">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Walter White</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Series / Breaking Bad</div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 7 - Generic 2 -->
+                            <div data-image="img/works/2.jpg"
+                                data-description="Escultura de Link, el valiente héroe de Hyrule. Modelada a mano cuidando la textura de su túnica y la forma de la Espada Maestra."
+                                class="ma-gallery-item cat-juegos sub-zelda">
+                                <img src="img/works/2.jpg" alt="Link">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Link (Zelda)</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Videojuegos / Zelda</div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 8 - Generic 3 -->
+                            <div data-image="img/works/3.jpg"
+                                data-description="Monkey D. Luffy, el futuro Rey de los Piratas. Con su emblemático sombrero de paja y cicatriz debajo del ojo. Sus proporciones están hechas a la medida."
+                                class="ma-gallery-item cat-anime sub-onepiece">
+                                <img src="img/works/3.jpg" alt="Luffy">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Monkey D. Luffy</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / One Piece</div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 9 - Generic 4 -->
+                            <div data-image="img/works/4.jpg"
+                                data-description="Hermosa réplica en porcelana de una mascota. Un recuerdo para toda la vida, esculpido meticulosamente a partir de fotografías para capturar la esencia del mejor amigo peludo."
+                                class="ma-gallery-item cat-mascotas">
+                                <img src="img/works/4.jpg" alt="Mascota Perro">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Mascota Personalizada</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Mascotas</div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 10 - Generic 5 -->
+                            <div data-image="img/works/5.jpg"
+                                data-description="Elegante figura de boda (Cake Topper). Personalizamos la vestimenta, los peinados y pequeños detalles como el ramo o los zapatos para un día inolvidable."
+                                class="ma-gallery-item cat-personalizadas">
+                                <img src="img/works/5.jpg" alt="Pareja">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Figura de Boda</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Personalizadas</div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 11 - Generic 6 -->
+                            <div data-image="img/works/6.jpg"
+                                data-description="El fontanero más famoso del mundo de los videojuegos. La figura resalta por sus colores vibrantes y el clásico overol esculpido a la perfección."
+                                class="ma-gallery-item cat-juegos sub-mario">
+                                <img src="img/works/6.jpg" alt="Mario">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Super Mario</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Videojuegos / Mario</div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 12 - Generic 1 -->
+                            <div data-image="img/works/1.jpg"
+                                data-description="Eleven con sus característicos poderes. La pintura meticulosa de la sangre falsa y su ropa le dan un tono realista inspirado directamente en la serie."
+                                class="ma-gallery-item cat-series sub-stranger">
+                                <img src="img/works/1.jpg" alt="Eleven">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Eleven</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Series / Stranger Things
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 13 - Generic 2 -->
+                            <div data-image="img/works/2.jpg"
+                                data-description="Figura miniatura de un gato Siamés. Pintado a mano para imitar su pelaje suave, ideal para colocar en el escritorio."
+                                class="ma-gallery-item cat-mascotas">
+                                <img src="img/works/2.jpg" alt="Gato">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Gato Siamés</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Mascotas</div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 14 - Generic 3 -->
+                            <div data-image="img/works/3.jpg"
+                                data-description="Goku en fase Super Saiyajin. Destacan las púas de su cabello dorado y los pliegues de su dogi naranja listos para la batalla."
+                                class="ma-gallery-item cat-anime sub-dragonball">
+                                <img src="img/works/3.jpg" alt="Goku">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Goku SSJ</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / Dragon Ball</div>
+                                </div>
+                            </div>
+
+                            <!-- Figure 15 - Generic 4 -->
+                            <div data-image="img/works/4.jpg"
+                                data-description="Figura de un grupo de amigos hecha a la medida. Un excelente regalo de aniversario o graduación, donde cada persona conserva su rasgo único."
+                                class="ma-gallery-item cat-personalizadas">
+                                <img src="img/works/4.jpg" alt="Amigos">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Retrato de Amigos</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Personalizadas</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <!-- gallery end -->
+
+                <!-- call to action -->
+                <section class="mil-soft-bg">
+                    <div class="container mil-p-120-120">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <span class="mil-suptitle mil-suptitle-right mil-suptitle-dark mil-up">¿Te gustó alguna
+                                    figura? <br> ¡Podemos hacer la tuya realidad!</span>
+                            </div>
+                        </div>
+                        <div class="mil-center">
+                            <h2 class="mil-up mil-mb-60">¿Listo para traer tus <span class="mil-thin">ideas a la</span>
+                                vida? <br> Estamos <span class="mil-thin">aquí para ayudarte</span></h2>
+                            <div class="mil-up"><a href="contact.html"
+                                    class="mil-button mil-arrow-place"><span>Contáctanos</span></a></div>
+                        </div>
+                    </div>
+                </section>
+                <!-- call to action end -->
+
+                <!-- footer -->
+                <footer class="mil-gradient-bg ma-footer-compact">
+                    <div class="mi-invert-fix">
+                        <div class="container ma-footer-container">
+                            <div class="ma-footer-layout">
+                                <!-- Marca -->
+                                <div class="ma-footer-brand">
+                                    <div class="mil-footer-logo-text ma-footer-logo">Mafenda</div>
+                                    <p class="ma-footer-text">
+                                        Figuras personalizadas hechas a mano, inspiradas en tus personajes,
+                                        mascotas o ideas favoritas.
+                                    </p>
+                                    <a href="https://wa.me/5215519106686?text=Hola,%20quiero%20hacer%20un%20pedido%20de%20una%20figura%20personalizada"
+                                        target="_blank" rel="noopener noreferrer" class="mil-wa-btn ma-footer-wa">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <span>Hacer pedido por WhatsApp</span>
+                                    </a>
+                                </div>
+                                <!-- Navegación y redes -->
+                                <div class="ma-footer-right">
+                                    <div class="ma-footer-block">
+                                        <h6>Explorar</h6>
+                                        <ul>
+                                            <li><a href="index.html">Inicio</a></li>
+                                            <li><a href="pedido.html">Pedido</a></li>
+                                            <li><a href="galeria.html">Galería</a></li>
+                                            <li><a href="faq.html">FAQ</a></li>
+                                            <li><a href="contact.html">Contacto</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="ma-footer-block">
+                                        <h6>Síguenos</h6>
+                                        <ul class="mil-social-icons ma-footer-social">
+                                            <li><a href="#" target="_blank" aria-label="Instagram"><i
+                                                        class="fab fa-instagram"></i></a></li>
+                                            <li><a href="#" target="_blank" aria-label="TikTok"><i
+                                                        class="fab fa-tiktok"></i></a></li>
+                                            <li><a href="#" target="_blank" aria-label="Facebook"><i
+                                                        class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#" target="_blank" aria-label="YouTube"><i
+                                                        class="fab fa-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ma-footer-bottom">
+                                <p>© 2026 Mafenda. Todos los derechos reservados.</p>
+                                <p>Hecho con amor para los coleccionistas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- footer end -->
+
+                <!-- hidden elements -->
+                <div class="mil-hidden-elements">
+                    <div class="mil-dodecahedron">
+                        <div class="mil-pentagon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="mil-pentagon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="mil-pentagon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="mil-pentagon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="mil-pentagon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="mil-pentagon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="mil-pentagon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="mil-pentagon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="mil-pentagon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="mil-pentagon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="mil-pentagon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="mil-pentagon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mil-arrow">
+                        <path
+                            d="M 14 5.3417969 C 13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188 L 13.207031 5.7226562 C 12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188 L 17.070312 11 L 4 11 C 3.448 11 3 11.448 3 12 C 3 12.552 3.448 13 4 13 L 17.070312 13 L 13.207031 16.863281 C 12.816031 17.254281 12.816031 17.887344 13.207031 18.277344 L 13.292969 18.363281 C 13.683969 18.754281 14.317031 18.754281 14.707031 18.363281 L 20.363281 12.707031 C 20.754281 12.316031 20.754281 11.682969 20.363281 11.292969 L 14.707031 5.6367188 C 14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z" />
+                    </svg>
+                </div>
+                <!-- hidden elements end -->
+
+            </div>
+        </div>
+        <!-- content -->
+    </div>
+    <!-- wrapper end -->
+
+    <!-- Custom Modal Layout -->
+    <div class="ma-modal-overlay" id="customModal">
+        <div class="ma-modal-box">
+            <button class="ma-modal-close" id="closeModal"><i class="fas fa-times"></i></button>
+            <div class="ma-modal-left">
+                <img src="" id="modalImage" alt="Figura de Arte">
+            </div>
+            <div class="ma-modal-right">
+                <h3 id="modalTitle">Título de la Figura</h3>
+                <div class="ma-modal-category" id="modalCategory">Categoría</div>
+                <p id="modalDesc">Descripción breve de la figura.</p>
+                <div style="margin-top: 30px;">
+                    <a href="pedido.html" class="mil-button mil-arrow-place"><span>Pedir una igual</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery js -->
+    <script src="js/plugins/jquery.min.js"></script>
+    <!-- swup js -->
+    <script src="js/plugins/swup.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/plugins/swiper.min.js"></script>
+    <!-- fancybox js -->
+    <script src="js/plugins/fancybox.min.js"></script>
+    <!-- gsap js -->
+    <script src="js/plugins/gsap.min.js"></script>
+    <!-- scroll smoother -->
+    <script src="js/plugins/smooth-scroll.js"></script>
+    <!-- scroll trigger js -->
+    <script src="js/plugins/ScrollTrigger.min.js"></script>
+    <!-- scroll to js -->
+    <script src="js/plugins/ScrollTo.min.js"></script>
+    <!-- ashley js -->
+    <script src="js/main.js"></script>
+    <!-- gallery custom js -->
+    <script src="js/galeria.js"></script>
+
+</body>
+
+</html>

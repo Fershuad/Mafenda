@@ -1,0 +1,309 @@
+/* ==========================================================================
+   Masonry Dynamic Gallery Styles
+   ========================================================================== */
+
+.ma-gallery-masonry {
+    column-count: 3;
+    column-gap: 30px;
+    padding: 20px 0 60px;
+}
+
+@media (max-width: 992px) {
+    .ma-gallery-masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .ma-gallery-masonry {
+        column-count: 1;
+    }
+}
+
+.ma-gallery-item {
+    break-inside: avoid;
+    margin-bottom: 30px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    display: block;
+    animation: popIn 0.5s ease forwards;
+    cursor: pointer;
+}
+
+.ma-gallery-item.hidden {
+    display: none;
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.ma-gallery-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.ma-gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.ma-gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 40px 25px 25px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.ma-gallery-item:hover .ma-gallery-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ma-gallery-title {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.ma-gallery-meta {
+    font-size: 0.9rem;
+    color: #d1a364; /* Accent color */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.mil-inner-banner {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.mil-inner-banner h1 {
+    font-size: 4rem;
+}
+
+/* ==========================================================================
+   Filter Bar Styles
+   ========================================================================== */
+
+.ma-filter-container {
+    margin-bottom: 50px;
+}
+
+.ma-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.ma-filter-btn {
+    background: #f7f7f7;
+    border: 1px solid transparent;
+    color: #444;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 10px 22px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.ma-filter-btn:hover, .ma-filter-btn.active {
+    background: #222;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================
+   Subfilter Bar Styles
+   ========================================================================== */
+
+.ma-subfilter-bar {
+    display: none; /* Hidden by default */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    animation: slideDown 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.ma-subfilter-bar.active {
+    display: flex;
+}
+
+.ma-subfilter-btn {
+    background: transparent;
+    border: 1px solid #ddd;
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 18px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+.ma-subfilter-btn:hover, .ma-subfilter-btn.active {
+    background: #d1a364;
+    border-color: #d1a364;
+    color: #fff;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Custom Modal Overlay (Left Image, Right Text)
+   ========================================================================== */
+
+.ma-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999999 !important; /* Forces it above all template frames */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.ma-modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.ma-modal-box {
+    background: #fff;
+    width: 90%;
+    max-width: 1000px;
+    height: 80vh;
+    max-height: 600px;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(30px) scale(0.95);
+    transition: transform 0.4s ease;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.ma-modal-overlay.active .ma-modal-box {
+    transform: translateY(0) scale(1);
+}
+
+/* Close Button */
+.ma-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #f7f7f7;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    border: none;
+    font-size: 1.2rem;
+    color: #444;
+    transition: all 0.3s;
+}
+
+.ma-modal-close:hover {
+    background: #ff4a4a;
+    color: #fff;
+}
+
+/* Left: Image */
+.ma-modal-left {
+    flex: 1.5;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ma-modal-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right: Content */
+.ma-modal-right {
+    flex: 1;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ma-modal-right h3 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.ma-modal-right .ma-modal-category {
+    font-size: 1rem;
+    color: #d1a364;
+    font-weight: 600;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ma-modal-right p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+    .ma-modal-box {
+        flex-direction: column;
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    .ma-modal-left {
+        flex: none;
+        height: 350px;
+    }
+    .ma-modal-right {
+        padding: 30px 20px;
+    }
+    .ma-modal-right h3 {
+        font-size: 1.8rem;
+    }
+}
