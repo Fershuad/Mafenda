@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/plugins/swiper.min.css">
     <link rel="stylesheet" href="css/plugins/fancybox.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/galeria.css">
 
     <title>Mafenda Creations | Hacer Pedido</title>
 
@@ -57,50 +58,29 @@
             <div class="mil-progress"></div>
         </div>
 
-        <!-- menú -->
-        <div class="mil-menu-frame">
-            <div class="mil-frame-top">
-                <a href="index.html" class="mil-logo">Mafenda Creations</a>
-                <div class="mil-menu-btn"><span></span></div>
-            </div>
-            <div class="container">
-                <div class="mil-menu-content">
-                    <div class="row">
-                        <div class="col-xl-5">
-                            <nav class="mil-main-menu" id="swupMenu">
-                                <ul>
-                                    <li><a href="index.html">Inicio</a></li>
-                                    <li class="mil-active"><a href="pedido.html">Pedido</a></li>
-                                    <li><a href="galeria.html">Galería</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="contact.html">Contacto</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="col-xl-7">
-                            <div class="mil-menu-right-frame">
-                                <div class="mil-animation-in">
-                                    <div class="mil-animation-frame">
-                                        <div class="mil-animation mil-position-1 mil-scale" data-value-1="2"
-                                            data-value-2="2"></div>
-                                    </div>
-                                </div>
-                                <div class="mil-menu-right"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="mil-curtain"></div>
 
-        <!-- barra fija -->
+        <!-- ★ NEW HEADER ★ -->
+        <header class="ma-site-header" id="siteHeader">
+            <div class="ma-header-inner">
+                <a href="index.html" class="ma-header-logo">
+                    <img src="img/photo/Logo%20Mafenda%202.png" alt="Mafenda Creations">
+                </a>
+                <nav class="ma-header-nav" id="swupMenu">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li class="mil-active"><a href="pedido.html">Pedido</a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- frame (only bottom bar now) -->
         <div class="mil-frame">
-            <div class="mil-frame-top">
-                <a href="index.html" class="mil-logo">Mafenda Creations</a>
-                <div class="mil-menu-btn"><span></span></div>
-            </div>
+            <div class="mil-frame-top" style="visibility:hidden;pointer-events:none;height:0;overflow:hidden;"></div>
             <div class="mil-frame-bottom">
                 <div class="mil-current-page"></div>
                 <div class="mil-back-to-top">
@@ -448,6 +428,7 @@
     <script src="js/plugins/ScrollTrigger.min.js"></script>
     <script src="js/plugins/ScrollTo.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/galeria.js"></script>
 
     <script>
         /* ─── Estado del wizard ─────────────────────── */

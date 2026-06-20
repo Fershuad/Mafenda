@@ -66,59 +66,33 @@
         </div>
         <!-- scrollbar progress end -->
 
-        <!-- menu -->
-        <div class="mil-menu-frame">
-            <div class="mil-frame-top">
-                <a href="index.html" class="mil-logo">Mafenda Creations</a>
-                <div class="mil-menu-btn">
-                    <span></span>
-                </div>
-            </div>
-            <div class="container">
-                <div class="mil-menu-content">
-                    <div class="row">
-                        <div class="col-xl-5">
 
-                            <nav class="mil-main-menu" id="swupMenu">
-                                <ul>
-                                    <li><a href="index.html">Inicio</a></li>
-                                    <li><a href="pedido.html">Pedido</a></li>
-                                    <li class="mil-active"><a href="galeria.html">Galería</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="contact.html">Contacto</a></li>
-                                </ul>
-                            </nav>
-
-                        </div>
-                        <div class="col-xl-7">
-                            <div class="mil-menu-right-frame">
-                                <div class="mil-animation-in">
-                                    <div class="mil-animation-frame">
-                                        <div class="mil-animation mil-position-1 mil-scale" data-value-1="2"
-                                            data-value-2="2"></div>
-                                    </div>
-                                </div>
-                                <div class="mil-menu-right"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- menu end -->
 
         <!-- curtain -->
         <div class="mil-curtain"></div>
         <!-- curtain end -->
 
-        <!-- frame -->
-        <div class="mil-frame">
-            <div class="mil-frame-top">
-                <a href="index.html" class="mil-logo">Mafenda Creations</a>
-                <div class="mil-menu-btn">
-                    <span></span>
-                </div>
+        <!-- ★ NEW HEADER ★ -->
+        <header class="ma-site-header" id="siteHeader">
+            <div class="ma-header-inner">
+                <a href="index.html" class="ma-header-logo">
+                    <img src="img/photo/Logo%20Mafenda%202.png" alt="Mafenda Creations">
+                </a>
+                <nav class="ma-header-nav" id="swupMenu">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="pedido.html">Pedido</a></li>
+                        <li class="mil-active"><a href="galeria.html">Galería</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </nav>
             </div>
+        </header>
+
+        <!-- frame (only bottom bar now) -->
+        <div class="mil-frame">
+            <div class="mil-frame-top" style="visibility:hidden;pointer-events:none;height:0;overflow:hidden;"></div>
             <div class="mil-frame-bottom">
                 <div class="mil-current-page"></div>
                 <div class="mil-back-to-top">
@@ -197,177 +171,240 @@
 
                         <div class="ma-gallery-masonry mil-up" id="gallery-masonry">
 
-                            <!-- Figure 1 - Naruto -->
-                            <div data-image="img/works/naruto/naruto.png"
-                                data-description="Impresionante figura de Naruto Uzumaki modelada a mano en porcelana fría. Cada detalle de su chamarra naranja, su cabello puntiagudo y la cinta de la aldea de la hoja fueron cuidadosamente esculpidos."
-                                class="ma-gallery-item cat-anime sub-naruto">
-                                <img src="img/works/naruto/naruto.png" alt="Naruto Uzumaki">
+                            <!-- Naruto -->
+                            <div class="ma-gallery-item cat-anime sub-naruto"
+                                data-image="img/photo/Naruto.png"
+                                data-description="Impresionante figura de Naruto Uzumaki modelada a mano en porcelana fría. Cada detalle de su chamarra naranja y su cabello puntiagudo fueron cuidadosamente esculpidos.">
+                                <img src="img/photo/Naruto.png" alt="Naruto Uzumaki">
                                 <div class="ma-gallery-overlay">
                                     <h4 class="ma-gallery-title">Naruto Uzumaki</h4>
                                     <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / Naruto</div>
                                 </div>
                             </div>
 
-                            <!-- Figure 2 - Sasuke -->
-                            <div data-image="img/works/naruto/sasuke.png"
-                                data-description="Figura de Sasuke Uchiha con su atuendo clásico. Esculpido con gran nivel de detalle, desde la mirada fría hasta el símbolo del clan Uchiha en su espalda."
-                                class="ma-gallery-item cat-anime sub-naruto">
-                                <img src="img/works/naruto/sasuke.png" alt="Sasuke Uchiha">
+                            <!-- Sasuke -->
+                            <div class="ma-gallery-item cat-anime sub-naruto"
+                                data-image="img/photo/Sasuke.png"
+                                data-description="Figura de Sasuke Uchiha con su atuendo clásico. Esculpido con gran nivel de detalle, desde su mirada fría hasta el símbolo del clan Uchiha.">
+                                <img src="img/photo/Sasuke.png" alt="Sasuke Uchiha">
                                 <div class="ma-gallery-overlay">
                                     <h4 class="ma-gallery-title">Sasuke Uchiha</h4>
                                     <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / Naruto</div>
                                 </div>
                             </div>
 
-                            <!-- Figure 3 - Orochimaru -->
-                            <div data-image="img/works/naruto/orochimaru.png"
-                                data-description="Escultura del legendario Sannin Orochimaru. La figura captura su aura oscura, los rasgos pálidos de serpiente y su característico atuendo con precisión."
-                                class="ma-gallery-item cat-anime sub-naruto">
-                                <img src="img/works/naruto/orochimaru.png" alt="Orochimaru">
+                            <!-- Orochimaru -->
+                            <div class="ma-gallery-item cat-anime sub-naruto"
+                                data-image="img/photo/orochimaru.png"
+                                data-description="Escultura del legendario Sannin Orochimaru. La figura captura su aura oscura y sus rasgos pálidos de serpiente con gran precisión.">
+                                <img src="img/photo/orochimaru.png" alt="Orochimaru">
                                 <div class="ma-gallery-overlay">
                                     <h4 class="ma-gallery-title">Orochimaru</h4>
                                     <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / Naruto</div>
                                 </div>
                             </div>
 
-                            <!-- Figure 4 - Kakashi -->
-                            <div data-image="img/works/naruto/kakashi.png"
-                                data-description="Figura de Kakashi Hatake, el ninja que copia. Se incluye su icónica máscara, el protector levantado y su chaleco táctico verde con detalles esculpidos de alta calidad."
-                                class="ma-gallery-item cat-anime sub-naruto">
-                                <img src="img/works/naruto/kakashi.png" alt="Kakashi Hatake">
+                            <!-- Kakashi -->
+                            <div class="ma-gallery-item cat-anime sub-naruto"
+                                data-image="img/photo/Kakashi.png"
+                                data-description="Figura de Kakashi Hatake, el ninja que copia. Se incluye su icónica máscara y el protector levantado, con detalles esculpidos de alta calidad.">
+                                <img src="img/photo/Kakashi.png" alt="Kakashi Hatake">
                                 <div class="ma-gallery-overlay">
                                     <h4 class="ma-gallery-title">Kakashi Hatake</h4>
                                     <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / Naruto</div>
                                 </div>
                             </div>
 
-                            <!-- Figure 5 - Itachi -->
-                            <div data-image="img/works/naruto/itachi.png"
-                                data-description="Elegante figura de Itachi Uchiha portando la capa de Akatsuki. Los pliegues de la túnica y la textura de las nubes rojas le dan un aspecto sumamente profesional y estético."
-                                class="ma-gallery-item cat-anime sub-naruto">
-                                <img src="img/works/naruto/itachi.png" alt="Itachi Uchiha">
-                                <div class="ma-gallery-overlay">
-                                    <h4 class="ma-gallery-title">Itachi Uchiha</h4>
-                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / Naruto</div>
-                                </div>
-                            </div>
-
-                            <!-- Figure 6 - Generic 1 -->
-                            <div data-image="img/works/1.jpg"
-                                data-description="Una figura excepcional inspirada en Walter White (Heisenberg). Cuenta con los icónicos lentes, sombrero y una expresión que captura perfectamente al personaje."
-                                class="ma-gallery-item cat-series sub-breakingbad">
-                                <img src="img/works/1.jpg" alt="Heisenberg">
-                                <div class="ma-gallery-overlay">
-                                    <h4 class="ma-gallery-title">Walter White</h4>
-                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Series / Breaking Bad</div>
-                                </div>
-                            </div>
-
-                            <!-- Figure 7 - Generic 2 -->
-                            <div data-image="img/works/2.jpg"
-                                data-description="Escultura de Link, el valiente héroe de Hyrule. Modelada a mano cuidando la textura de su túnica y la forma de la Espada Maestra."
-                                class="ma-gallery-item cat-juegos sub-zelda">
-                                <img src="img/works/2.jpg" alt="Link">
-                                <div class="ma-gallery-overlay">
-                                    <h4 class="ma-gallery-title">Link (Zelda)</h4>
-                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Videojuegos / Zelda</div>
-                                </div>
-                            </div>
-
-                            <!-- Figure 8 - Generic 3 -->
-                            <div data-image="img/works/3.jpg"
-                                data-description="Monkey D. Luffy, el futuro Rey de los Piratas. Con su emblemático sombrero de paja y cicatriz debajo del ojo. Sus proporciones están hechas a la medida."
-                                class="ma-gallery-item cat-anime sub-onepiece">
-                                <img src="img/works/3.jpg" alt="Luffy">
+                            <!-- Luffy -->
+                            <div class="ma-gallery-item cat-anime sub-onepiece"
+                                data-image="img/photo/Luffy.png"
+                                data-description="Monkey D. Luffy, el futuro Rey de los Piratas. Con su emblemático sombrero de paja y cicatriz debajo del ojo. Sus proporciones están hechas a la medida.">
+                                <img src="img/photo/Luffy.png" alt="Monkey D. Luffy">
                                 <div class="ma-gallery-overlay">
                                     <h4 class="ma-gallery-title">Monkey D. Luffy</h4>
                                     <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / One Piece</div>
                                 </div>
                             </div>
 
-                            <!-- Figure 9 - Generic 4 -->
-                            <div data-image="img/works/4.jpg"
-                                data-description="Hermosa réplica en porcelana de una mascota. Un recuerdo para toda la vida, esculpido meticulosamente a partir de fotografías para capturar la esencia del mejor amigo peludo."
-                                class="ma-gallery-item cat-mascotas">
-                                <img src="img/works/4.jpg" alt="Mascota Perro">
+                            <!-- Link -->
+                            <div class="ma-gallery-item cat-juegos sub-zelda"
+                                data-image="img/photo/Link.png"
+                                data-description="Escultura de Link, el valiente héroe de Hyrule. Modelada a mano cuidando la textura de su túnica y la forma de la Espada Maestra.">
+                                <img src="img/photo/Link.png" alt="Link de Zelda">
                                 <div class="ma-gallery-overlay">
-                                    <h4 class="ma-gallery-title">Mascota Personalizada</h4>
-                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Mascotas</div>
+                                    <h4 class="ma-gallery-title">Link (Zelda)</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Videojuegos / Zelda</div>
                                 </div>
                             </div>
 
-                            <!-- Figure 10 - Generic 5 -->
-                            <div data-image="img/works/5.jpg"
-                                data-description="Elegante figura de boda (Cake Topper). Personalizamos la vestimenta, los peinados y pequeños detalles como el ramo o los zapatos para un día inolvidable."
-                                class="ma-gallery-item cat-personalizadas">
-                                <img src="img/works/5.jpg" alt="Pareja">
-                                <div class="ma-gallery-overlay">
-                                    <h4 class="ma-gallery-title">Figura de Boda</h4>
-                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Personalizadas</div>
-                                </div>
-                            </div>
-
-                            <!-- Figure 11 - Generic 6 -->
-                            <div data-image="img/works/6.jpg"
-                                data-description="El fontanero más famoso del mundo de los videojuegos. La figura resalta por sus colores vibrantes y el clásico overol esculpido a la perfección."
-                                class="ma-gallery-item cat-juegos sub-mario">
-                                <img src="img/works/6.jpg" alt="Mario">
-                                <div class="ma-gallery-overlay">
-                                    <h4 class="ma-gallery-title">Super Mario</h4>
-                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Videojuegos / Mario</div>
-                                </div>
-                            </div>
-
-                            <!-- Figure 12 - Generic 1 -->
-                            <div data-image="img/works/1.jpg"
-                                data-description="Eleven con sus característicos poderes. La pintura meticulosa de la sangre falsa y su ropa le dan un tono realista inspirado directamente en la serie."
-                                class="ma-gallery-item cat-series sub-stranger">
-                                <img src="img/works/1.jpg" alt="Eleven">
+                            <!-- Eleven -->
+                            <div class="ma-gallery-item cat-series sub-stranger"
+                                data-image="img/photo/Eleven.png"
+                                data-description="Eleven con sus característicos poderes. La pintura meticulosa y su ropa le dan un tono realista inspirado directamente en la serie Stranger Things.">
+                                <img src="img/photo/Eleven.png" alt="Eleven - Stranger Things">
                                 <div class="ma-gallery-overlay">
                                     <h4 class="ma-gallery-title">Eleven</h4>
-                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Series / Stranger Things
-                                    </div>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Series / Stranger Things</div>
                                 </div>
                             </div>
 
-                            <!-- Figure 13 - Generic 2 -->
-                            <div data-image="img/works/2.jpg"
-                                data-description="Figura miniatura de un gato Siamés. Pintado a mano para imitar su pelaje suave, ideal para colocar en el escritorio."
-                                class="ma-gallery-item cat-mascotas">
-                                <img src="img/works/2.jpg" alt="Gato">
+                            <!-- Walter White -->
+                            <div class="ma-gallery-item cat-series sub-breakingbad"
+                                data-image="img/photo/walter white.png"
+                                data-description="Una figura excepcional inspirada en Walter White (Heisenberg). Cuenta con los icónicos lentes, sombrero y una expresión que captura perfectamente al personaje.">
+                                <img src="img/photo/walter white.png" alt="Walter White - Heisenberg">
                                 <div class="ma-gallery-overlay">
-                                    <h4 class="ma-gallery-title">Gato Siamés</h4>
-                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Mascotas</div>
+                                    <h4 class="ma-gallery-title">Walter White</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Series / Breaking Bad</div>
                                 </div>
                             </div>
 
-                            <!-- Figure 14 - Generic 3 -->
-                            <div data-image="img/works/3.jpg"
-                                data-description="Goku en fase Super Saiyajin. Destacan las púas de su cabello dorado y los pliegues de su dogi naranja listos para la batalla."
-                                class="ma-gallery-item cat-anime sub-dragonball">
-                                <img src="img/works/3.jpg" alt="Goku">
+                            <!-- Muñeco Personalizado -->
+                            <div class="ma-gallery-item cat-personalizadas"
+                                data-image="img/photo/Mu%C3%B1eco.png"
+                                data-description="Figura personalizada única, inspirada en una persona real. Cada rasgo facial, el atuendo y los pequeños detalles son reproducidos fielmente en porcelana fría.">
+                                <img src="img/photo/Muñeco.png" alt="Muñeco Personalizado">
                                 <div class="ma-gallery-overlay">
-                                    <h4 class="ma-gallery-title">Goku SSJ</h4>
-                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Anime / Dragon Ball</div>
-                                </div>
-                            </div>
-
-                            <!-- Figure 15 - Generic 4 -->
-                            <div data-image="img/works/4.jpg"
-                                data-description="Figura de un grupo de amigos hecha a la medida. Un excelente regalo de aniversario o graduación, donde cada persona conserva su rasgo único."
-                                class="ma-gallery-item cat-personalizadas">
-                                <img src="img/works/4.jpg" alt="Amigos">
-                                <div class="ma-gallery-overlay">
-                                    <h4 class="ma-gallery-title">Retrato de Amigos</h4>
+                                    <h4 class="ma-gallery-title">Figura Personalizada</h4>
                                     <div class="ma-gallery-meta"><i class="far fa-star"></i> Personalizadas</div>
                                 </div>
                             </div>
 
-                        </div>
+                            <!-- Perfil -->
+                            <div class="ma-gallery-item cat-personalizadas"
+                                data-image="img/photo/Perfil.png"
+                                data-description="Retrato artístico en porcelana fría. Una pieza única que inmortaliza el perfil de una persona especial con acabados suaves y detallados.">
+                                <img src="img/photo/Perfil.png" alt="Figura Perfil">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Retrato de Perfil</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Personalizadas</div>
+                                </div>
+                            </div>
+
+                            <!-- Figuras de Porcelana 1 -->
+                            <div class="ma-gallery-item cat-personalizadas"
+                                data-image="img/photo/FigPorcelana.png"
+                                data-description="Figura de porcelana fría de alta calidad. Acabados suaves y colores vibrantes que resisten el paso del tiempo.">
+                                <img src="img/photo/FigPorcelana.png" alt="Figura en Porcelana Fría">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Porcelana Fría</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Personalizadas</div>
+                                </div>
+                            </div>
+
+                            <!-- Figuras de Porcelana 2 -->
+                            <div class="ma-gallery-item cat-personalizadas"
+                                data-image="img/photo/FigPorcelana2.png"
+                                data-description="Segunda edición de nuestra colección en porcelana fría. Diseñada con extremo cuidado en los detalles de pintura y textura.">
+                                <img src="img/photo/FigPorcelana2.png" alt="Figura en Porcelana Fría 2">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Porcelana Fría II</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Personalizadas</div>
+                                </div>
+                            </div>
+
+                            <!-- Figuras de Porcelana 3 -->
+                            <div class="ma-gallery-item cat-personalizadas"
+                                data-image="img/photo/FigPorcelana3.png"
+                                data-description="Figura artesanal en porcelana fría con acabados de alta calidad. Colores suaves y expresión llena de vida.">
+                                <img src="img/photo/FigPorcelana3.png" alt="Figura en Porcelana Fría 3">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Porcelana Fría III</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Personalizadas</div>
+                                </div>
+                            </div>
+
+                            <!-- Figuras de Porcelana 4 -->
+                            <div class="ma-gallery-item cat-personalizadas"
+                                data-image="img/photo/FigPorcelana4.png"
+                                data-description="Obra artesanal en porcelana fría pintada a mano. Cada detalle está pensado para durar toda una vida.">
+                                <img src="img/photo/FigPorcelana4.png" alt="Figura en Porcelana Fría 4">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Porcelana Fría IV</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Personalizadas</div>
+                                </div>
+                            </div>
+
+                            <!-- Figuras de Porcelana 5 -->
+                            <div class="ma-gallery-item cat-personalizadas"
+                                data-image="img/photo/FigPorcelana5.jpeg"
+                                data-description="Figura en porcelana fría de edición especial con colores intensos y proporciones equilibradas. Ideal como regalo único.">
+                                <img src="img/photo/FigPorcelana5.jpeg" alt="Figura en Porcelana Fría 5">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Porcelana Fría V</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Personalizadas</div>
+                                </div>
+                            </div>
+
+                            <!-- Figuras conjunto -->
+                            <div class="ma-gallery-item cat-personalizadas"
+                                data-image="img/photo/Figuras.png"
+                                data-description="Colección de figuras personalizadas. Ideal para retratar a toda la familia, amigos o un grupo especial.">
+                                <img src="img/photo/Figuras.png" alt="Conjunto de Figuras">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Colección de Figuras</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Personalizadas</div>
+                                </div>
+                            </div>
+
+                            <!-- Perro 1 -->
+                            <div class="ma-gallery-item cat-mascotas"
+                                data-image="img/photo/perro1.png"
+                                data-description="Hermosa réplica en porcelana de una mascota. Un recuerdo para toda la vida, esculpido meticulosamente a partir de fotografías.">
+                                <img src="img/photo/perro1.png" alt="Mascota Personalizada - Perro">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Mascota Fiel</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Mascotas</div>
+                                </div>
+                            </div>
+
+                            <!-- Perro 2 -->
+                            <div class="ma-gallery-item cat-mascotas"
+                                data-image="img/photo/perro2.png"
+                                data-description="Figura de mascota capturada con amor. Cada pelo, color y expresión es fielmente reproducido en porcelana fría.">
+                                <img src="img/photo/perro2.png" alt="Mascota Personalizada - Perro 2">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Compañero Eterno</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Mascotas</div>
+                                </div>
+                            </div>
+
+                            <!-- Perro 3 -->
+                            <div class="ma-gallery-item cat-mascotas"
+                                data-image="img/photo/perro3.png"
+                                data-description="Réplica adorable de tu mejor amigo peludo. Trabajamos a partir de tus fotos para capturar cada detalle de su personalidad.">
+                                <img src="img/photo/perro3.png" alt="Mascota Personalizada - Perro 3">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Amigo Peludo</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Mascotas</div>
+                                </div>
+                            </div>
+
+                            <!-- Perro 4 -->
+                            <div class="ma-gallery-item cat-mascotas"
+                                data-image="img/photo/perro4.png"
+                                data-description="Figura de mascota hecha con amor y detalle. Una pieza única que inmortaliza a tu compañero de vida en porcelana fría.">
+                                <img src="img/photo/perro4.png" alt="Mascota Personalizada - Perro 4">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Tu Mascota en Porcelana</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Mascotas</div>
+                                </div>
+                            </div>
+
+                            <!-- Perro 5 -->
+                            <div class="ma-gallery-item cat-mascotas"
+                                data-image="img/photo/perro5.png"
+                                data-description="La quinta en nuestra colección de mascotas. Esculpida con precisión y pintada a mano para reflejar la esencia de tu peludo favorito.">
+                                <img src="img/photo/perro5.png" alt="Mascota Personalizada - Perro 5">
+                                <div class="ma-gallery-overlay">
+                                    <h4 class="ma-gallery-title">Peludo con Amor</h4>
+                                    <div class="ma-gallery-meta"><i class="far fa-star"></i> Mascotas</div>
+                                </div>
+                            </div>
+
                     </div>
                 </section>
                 <!-- gallery end -->
-
                 <!-- call to action -->
                 <section class="mil-soft-bg">
                     <div class="container mil-p-120-120">
@@ -536,30 +573,29 @@
                     </svg>
                 </div>
                 <!-- hidden elements end -->
+                <!-- Custom Modal Layout (Moved inside swupMain) -->
+                <div class="ma-modal-overlay" id="customModal">
+                    <div class="ma-modal-box">
+                        <button class="ma-modal-close" id="closeModal"><i class="fas fa-times"></i></button>
+                        <div class="ma-modal-left">
+                            <img src="" id="modalImage" alt="Figura de Arte">
+                        </div>
+                        <div class="ma-modal-right">
+                            <h3 id="modalTitle">Título de la Figura</h3>
+                            <div class="ma-modal-category" id="modalCategory">Categoría</div>
+                            <p id="modalDesc">Descripción breve de la figura.</p>
+                            <div style="margin-top: 30px;">
+                                <a href="pedido.html" class="mil-button mil-arrow-place"><span>Pedir una igual</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
         <!-- content -->
     </div>
     <!-- wrapper end -->
-
-    <!-- Custom Modal Layout -->
-    <div class="ma-modal-overlay" id="customModal">
-        <div class="ma-modal-box">
-            <button class="ma-modal-close" id="closeModal"><i class="fas fa-times"></i></button>
-            <div class="ma-modal-left">
-                <img src="" id="modalImage" alt="Figura de Arte">
-            </div>
-            <div class="ma-modal-right">
-                <h3 id="modalTitle">Título de la Figura</h3>
-                <div class="ma-modal-category" id="modalCategory">Categoría</div>
-                <p id="modalDesc">Descripción breve de la figura.</p>
-                <div style="margin-top: 30px;">
-                    <a href="pedido.html" class="mil-button mil-arrow-place"><span>Pedir una igual</span></a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- jQuery js -->
     <script src="js/plugins/jquery.min.js"></script>

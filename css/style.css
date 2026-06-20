@@ -1385,7 +1385,7 @@ frame
 .mil-frame {
   padding: 50px 60px 60px 60px;
   position: fixed;
-  z-index: 2;
+  z-index: 99;
   pointer-events: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6834,7 +6834,7 @@ Contacto estilo dos columnas
 .ma-faq-hero h1 span {
   font-weight: 800;
   background: linear-gradient(135deg, #FFA3EC, #AD95E8, #A5A3FF);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -7006,7 +7006,7 @@ Contacto estilo dos columnas
 
 .ma-faq-card.active .ma-faq-question-title {
   background: linear-gradient(135deg, #FF83DC, #8583FF);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -7128,22 +7128,238 @@ Contacto estilo dos columnas
   .ma-faq-hero h1 {
     font-size: 38px;
   }
+
   .ma-faq-question-btn {
     padding: 22px 20px;
   }
+
   .ma-faq-answer {
     padding: 0 20px 22px;
   }
+
   .ma-faq-question-title {
     font-size: 16px;
   }
+
   .ma-faq-search-input {
     height: 56px;
     font-size: 15px;
   }
+
   .ma-faq-filter-btn {
     height: 40px;
     padding: 0 18px;
-    font-size: 11px;
   }
-}
+}
+
+/* ============================================================
+   NEW SITE HEADER — .ma-site-header (Floating Pill Design)
+   ============================================================ */
+.ma-site-header {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 1100px;
+    z-index: 10000;
+    padding: 0 30px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    
+    /* Glassmorphism from start */
+    background: rgba(30, 15, 45, 0.4);
+    backdrop-filter: blur(28px) saturate(1.5);
+    -webkit-backdrop-filter: blur(28px) saturate(1.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: all;
+}
+.ma-site-header.is-scrolled {
+    top: 15px;
+    height: 70px;
+    width: 96%;
+    background: rgba(20, 10, 35, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.ma-header-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* --- Logo --- */
+.ma-header-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+.ma-header-logo img {
+    height: 75px;
+    width: auto;
+    object-fit: contain;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+}
+.ma-site-header.is-scrolled .ma-header-logo img {
+    height: 52px;
+}
+.ma-header-logo:hover img {
+    transform: scale(1.06) rotate(-2deg);
+    filter: drop-shadow(0 4px 16px rgba(201,160,220,0.5));
+}
+
+/* --- Nav --- */
+.ma-site-header .ma-header-nav {
+    display: flex;
+    align-items: center;
+}
+.ma-site-header .ma-header-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.ma-site-header .ma-header-nav ul li {
+    margin: 0;
+}
+.ma-site-header .ma-header-nav ul li a {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.85);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+.ma-site-header .ma-header-nav ul li a:hover {
+    color: #fff;
+    background: rgba(201,160,220,0.15);
+    transform: translateY(-2px);
+}
+.ma-site-header .ma-header-nav ul li.mil-active a {
+    color: #fff;
+    background: linear-gradient(135deg, rgba(175,130,205,0.4), rgba(255,163,236,0.35));
+    box-shadow: 0 4px 16px rgba(201,160,220,0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Push content down so it doesn't hide behind the header */
+.mil-content {
+    padding-top: 120px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+    .ma-site-header {
+        top: 15px;
+        width: 94%;
+        padding: 15px 24px;
+        height: auto;
+        min-height: 70px;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 20px;
+        background: rgba(30, 15, 45, 0.7);
+    }
+    .ma-site-header.is-scrolled {
+        top: 10px;
+        width: 96%;
+        border-radius: 16px;
+    }
+    .ma-header-inner {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .ma-header-logo img {
+        height: 62px;
+    }
+    .ma-site-header.is-scrolled .ma-header-logo img {
+        height: 48px;
+    }
+    .ma-site-header .ma-header-nav ul {
+        gap: 4px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .ma-site-header .ma-header-nav ul li a {
+        font-size: 11px;
+        padding: 8px 16px;
+    }
+    .mil-content {
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .ma-site-header {
+        top: 10px;
+        padding: 12px 15px;
+        border-radius: 15px;
+    }
+    .ma-header-logo img {
+        height: 52px;
+    }
+    .ma-site-header .ma-header-nav ul li a {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+}
+
+/* ============================================================
+   Gallery Featured "Ver Mas" Card
+   ============================================================ */
+.ma-gallery-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(30, 15, 45, 0.8), rgba(20, 10, 35, 0.9));
+    height: 100%;
+    min-height: 300px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid rgba(201, 160, 220, 0.2);
+    transition: all 0.4s ease;
+}
+.ma-gallery-more:hover {
+    background: linear-gradient(135deg, rgba(40, 20, 60, 0.9), rgba(30, 15, 50, 0.95));
+    border-color: rgba(201, 160, 220, 0.5);
+    box-shadow: 0 10px 30px rgba(201, 160, 220, 0.2);
+    transform: translateY(-5px);
+}
+.ma-more-content {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+}
+.ma-more-content i {
+    font-size: 40px;
+    color: rgba(201, 160, 220, 0.8);
+    margin-bottom: 15px;
+    transition: all 0.4s ease;
+    display: block;
+}
+.ma-gallery-more:hover .ma-more-content i {
+    color: #fff;
+    transform: scale(1.1) rotate(90deg);
+}
+.ma-more-content span {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}

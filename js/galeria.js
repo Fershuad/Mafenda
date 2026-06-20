@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+function initGaleria() {
     // --- FILTER LOGIC ---
     const mainFilterBtns = document.querySelectorAll('.ma-filter-bar .ma-filter-btn');
     const subFilterBtns = document.querySelectorAll('.ma-subfilter-btn');
@@ -23,12 +23,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Main categories click
     if (mainFilterBtns) {
         mainFilterBtns.forEach(button => {
-            button.addEventListener('click', function() {
+            // Remove old listener to avoid duplicates if re-init
+            const newBtn = button.cloneNode(true);
+            button.parentNode.replaceChild(newBtn, button);
+            
+            newBtn.addEventListener('click', function() {
                 const filterValue = this.getAttribute('data-filter');
                 const targetSubmenuId = this.getAttribute('data-target');
 
                 // Active state for main buttons
-                mainFilterBtns.forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.ma-filter-bar .ma-filter-btn').forEach(btn => btn.classList.remove('active'));
                 this.classList.add('active');
 
                 // Hide all submenus
@@ -57,7 +61,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Subcategories click
     if (subFilterBtns) {
         subFilterBtns.forEach(button => {
-            button.addEventListener('click', function() {
+            const newBtn = button.cloneNode(true);
+            button.parentNode.replaceChild(newBtn, button);
+
+            newBtn.addEventListener('click', function() {
                 const filterValue = this.getAttribute('data-filter');
                 
                 // Active state for sub buttons within the same bar
@@ -80,9 +87,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const modalCategory = document.getElementById('modalCategory');
         const modalDesc = document.getElementById('modalDesc');
 
+        // Clean up old events from gallery items
+        const freshGalleryItems = document.querySelectorAll('.ma-gallery-item');
+
         // Open Modal
-        galleryItems.forEach(item => {
-            item.addEventListener('click', function(e) {
+        freshGalleryItems.forEach(item => {
+            const newItem = item.cloneNode(true);
+            item.parentNode.replaceChild(newItem, item);
+
+            newItem.addEventListener('click', function(e) {
                 // Prevenir comportamiento de link real si hubiera
                 e.preventDefault();
 
@@ -104,15 +117,50 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Close Modal via Button
-        closeModalBtn.addEventListener('click', function() {
-            modal.classList.remove('active');
-        });
+        if (closeModalBtn) {
+            const newCloseBtn = closeModalBtn.cloneNode(true);
+            closeModalBtn.parentNode.replaceChild(newCloseBtn, closeModalBtn);
+            newCloseBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+            });
+        }
 
         // Close Modal via Background Click
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.classList.remove('active');
+        const newModal = modal.cloneNode(true);
+        modal.parentNode.replaceChild(newModal, modal);
+        newModal.addEventListener('click', function(e) {
+            if (e.target === newModal) {
+                newModal.classList.remove('active');
             }
         });
     }
+}
+
+// Global scroll listener for header
+function initHeaderScroll() {
+    const header = document.getElementById('siteHeader');
+    if (!header) return;
+
+    // Remove previous scroll listener to avoid stacking
+    window.onscroll = null;
+
+    const onScroll = () => {
+        if (window.scrollY > 40) {
+            header.classList.add('is-scrolled');
+        } else {
+            header.classList.remove('is-scrolled');
+        }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // run immediately on load
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initGaleria();
+    initHeaderScroll();
+});
+document.addEventListener('swup:contentReplaced', () => {
+    initGaleria();
+    initHeaderScroll();
 });
