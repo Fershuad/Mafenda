@@ -6909,18 +6909,15 @@ Contacto estilo dos columnas
   /* Centrado seguro que evita recortes en el lado izquierdo */
   width: max-content;
   max-width: 100%;
-  margin: 0 auto;
+  /* Oculta la barra de scroll para que se vea limpio */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* El truco profesional para que no se pegue ni recorte en el lado derecho en móviles */
 .ma-faq-filters::after {
   content: '';
   flex: 0 0 20px;
-}
-
-  /* Oculta la barra de scroll para que se vea limpio */
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 .ma-faq-filters::-webkit-scrollbar {
