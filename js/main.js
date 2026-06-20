@@ -101,6 +101,15 @@ $(function () {
         opacity: 0,
         ease: 'sine',
     }, "+=.2");
+    // Header fade in
+    timeline.fromTo(".ma-site-header", 0.8, {
+        opacity: 0,
+        ease: 'sine',
+    }, {
+        opacity: 1,
+        pointerEvents: 'all',
+    }, "-=0.8");
+    // Other elements fade in
     timeline.fromTo(".mil-up", 0.8, {
         opacity: 0,
         y: 40,
@@ -1051,3 +1060,18 @@ $(function () {
     });
 
 });
+
+// Header Sticky / Scrolled Class
+$(document).ready(function() {
+    function checkScroll() {
+        if ($(window).scrollTop() > 30) {
+            $('#siteHeader').addClass('is-scrolled');
+        } else {
+            $('#siteHeader').removeClass('is-scrolled');
+        }
+    }
+
+    $(window).on('scroll', checkScroll);
+    checkScroll(); // Run once on load
+});
+

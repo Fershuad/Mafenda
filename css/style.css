@@ -3336,7 +3336,7 @@ blog
 @media screen and (max-width: 992px) {
   .mil-blog-card.mil-blog-card-hori {
     display: block;
-    padding-top: 0;
+
     border: none;
   }
 
@@ -3858,7 +3858,7 @@ portfolio
 
 @media screen and (max-width: 768px) {
   .mil-works-nav {
-    padding-top: 0;
+
     border-top: none;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -5001,7 +5001,7 @@ html.is-animating .mil-menu-frame {
   color: #100b21 !important;
 }
 
-/* 404 Mafenda - versiÃ³n morado/rosa abierta */
+/* 404 Mafenda - versiÃƒÂ³n morado/rosa abierta */
 .ma-404 {
   position: relative;
   height: 100vh;
@@ -5073,7 +5073,7 @@ html.is-animating .mil-menu-frame {
 }
 
 .ma-404__eyebrow::before {
-  content: "âœ¦";
+  content: "Ã¢Å“Â¦";
   font-size: 15px;
 }
 
@@ -5333,7 +5333,7 @@ html.is-animating .mil-menu-frame {
 }
 
 /* -------------------------------------------
-Nueva sección de proceso de pedido
+Nueva secciÃ³n de proceso de pedido
 ------------------------------------------- */
 
 .mil-order-new-head {
@@ -5549,7 +5549,7 @@ Nueva sección de proceso de pedido
 }
 
 /* -------------------------------------------
-Carrusel galería preview - Home
+Carrusel galerÃ­a preview - Home
 ------------------------------------------- */
 
 .ma-gallery-preview {
@@ -5680,7 +5680,7 @@ Footer compacto Mafenda
   color: rgba(16, 11, 33, 0.72) !important;
 }
 
-/* Botón WhatsApp */
+/* BotÃ³n WhatsApp */
 .ma-footer-wa {
   min-width: 300px;
   justify-content: center;
@@ -5822,7 +5822,7 @@ Footer compacto Mafenda
   }
 }
 
-/* Responsive móvil */
+/* Responsive mÃ³vil */
 @media screen and (max-width: 768px) {
   .ma-footer-container {
     padding-top: 55px;
@@ -5845,7 +5845,7 @@ Footer compacto Mafenda
 }
 
 /* -------------------------------------------
-Página de contacto Mafenda
+PÃ¡gina de contacto Mafenda
 ------------------------------------------- */
 
 .ma-contact-hero {
@@ -6223,7 +6223,7 @@ Contacto estilo dos columnas
   }
 }
 
-/* subtítulo del formulario de contacto */
+/* subtÃ­tulo del formulario de contacto */
 .ma-contact-form-sub {
   margin-bottom: 24px;
   color: rgba(16, 11, 33, 0.52);
@@ -6231,7 +6231,7 @@ Contacto estilo dos columnas
   line-height: 1.6;
 }
 
-/* ─── Wizard layout ─────────────────────────── */
+/* â”€â”€â”€ Wizard layout â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ma-wizard-section {
   min-height: 100vh;
   padding: 120px 0 80px;
@@ -6246,7 +6246,7 @@ Contacto estilo dos columnas
   margin: 0 auto;
 }
 
-/* ─── Stepper header ────────────────────────── */
+/* â”€â”€â”€ Stepper header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ma-stepper {
   display: flex;
   align-items: center;
@@ -6330,7 +6330,7 @@ Contacto estilo dos columnas
   color: rgba(16, 11, 33, 0.6);
 }
 
-/* ─── Step card ─────────────────────────────── */
+/* â”€â”€â”€ Step card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ma-step-card {
   display: none;
   padding: 52px 56px;
@@ -6386,7 +6386,7 @@ Contacto estilo dos columnas
   line-height: 1.7;
 }
 
-/* ─── Image upload ──────────────────────────── */
+/* â”€â”€â”€ Image upload â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ma-upload-zone {
   position: relative;
   width: 100%;
@@ -6485,7 +6485,7 @@ Contacto estilo dos columnas
   background: rgba(16, 11, 33, 0.9);
 }
 
-/* ─── Budget selector ───────────────────────── */
+/* â”€â”€â”€ Budget selector â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ma-budget-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -6550,7 +6550,7 @@ Contacto estilo dos columnas
   line-height: 1.5;
 }
 
-/* ─── Details form ──────────────────────────── */
+/* â”€â”€â”€ Details form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ma-detail-group {
   margin-bottom: 22px;
 }
@@ -6609,7 +6609,7 @@ Contacto estilo dos columnas
   gap: 16px;
 }
 
-/* ─── Summary ───────────────────────────────── */
+/* â”€â”€â”€ Summary â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ma-summary {
   display: grid;
   gap: 16px;
@@ -6668,7 +6668,7 @@ Contacto estilo dos columnas
   border: 1px solid rgba(16, 11, 33, 0.08);
 }
 
-/* ─── Navigation buttons ────────────────────── */
+/* â”€â”€â”€ Navigation buttons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ma-wizard-nav {
   display: flex;
   align-items: center;
@@ -6682,7 +6682,7 @@ Contacto estilo dos columnas
   padding: 0 28px;
   border-radius: 999px;
   border: 2px solid rgba(16, 11, 33, 0.14);
-  background: transparent;
+  background: linear-gradient(to bottom, rgba(20, 10, 30, 0.8) 0%, rgba(20, 10, 30, 0.4) 40%, transparent 100%);
   color: rgba(16, 11, 33, 0.65);
   font-family: inherit;
   font-size: 13px;
@@ -6751,7 +6751,7 @@ Contacto estilo dos columnas
   font-size: 15px;
 }
 
-/* ─── Responsive ────────────────────────────── */
+/* â”€â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media screen and (max-width: 768px) {
   .ma-wizard-section {
     padding: 100px 0 60px;
@@ -6784,7 +6784,7 @@ Contacto estilo dos columnas
 }
 
 /* ==========================================================================
-   ─── FAQ Section Styles ───
+   â”€â”€â”€ FAQ Section Styles â”€â”€â”€
    ========================================================================== */
 
 .ma-faq-hero {
@@ -6987,7 +6987,7 @@ Contacto estilo dos columnas
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: transparent;
+  background: linear-gradient(to bottom, rgba(20, 10, 30, 0.8) 0%, rgba(20, 10, 30, 0.4) 40%, transparent 100%);
   border: none;
   cursor: pointer;
   text-align: left;
@@ -7153,213 +7153,304 @@ Contacto estilo dos columnas
 }
 
 /* ============================================================
-   NEW SITE HEADER — .ma-site-header (Floating Pill Design)
+   NEW SITE HEADER — DULCE NUBE PILL STYLE
    ============================================================ */
 .ma-site-header {
-    position: fixed;
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 92%;
-    max-width: 1100px;
-    z-index: 10000;
-    padding: 0 30px;
-    height: 85px;
-    display: flex;
-    align-items: center;
-    border-radius: 60px;
-    
-    /* Glassmorphism from start */
-    background: rgba(30, 15, 45, 0.4);
-    backdrop-filter: blur(28px) saturate(1.5);
-    -webkit-backdrop-filter: blur(28px) saturate(1.5);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    pointer-events: all;
-}
-.ma-site-header.is-scrolled {
-    top: 15px;
-    height: 70px;
-    width: 96%;
-    background: rgba(20, 10, 35, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 1200px;
+  z-index: 10000;
+
+  /* Initially hidden for preloader transition */
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s ease;
 }
 
-.ma-header-inner {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.ma-header-inner-pill {
+  width: 100%;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(255, 163, 236, 0.12), 0 1px 2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  padding: 0 35px;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+/* Scrolled state */
+.ma-site-header.is-scrolled .ma-header-inner-pill {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 12px 35px rgba(255, 163, 236, 0.18), 0 2px 5px rgba(0, 0, 0, 0.08);
+  height: 76px;
 }
 
 /* --- Logo --- */
 .ma-header-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
 }
+
 .ma-header-logo img {
-    height: 75px;
-    width: auto;
-    object-fit: contain;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+  height: 220px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  /* 👇 Agregado para bajar el logo */
+  transform: translateY(9px);
 }
-.ma-site-header.is-scrolled .ma-header-logo img {
-    height: 52px;
-}
+
+/* Se eliminó la regla que encogía el logo al hacer scroll */
+
 .ma-header-logo:hover img {
-    transform: scale(1.06) rotate(-2deg);
-    filter: drop-shadow(0 4px 16px rgba(201,160,220,0.5));
+  transform: translateY(9px) scale(1.03);
 }
 
-/* --- Nav --- */
-.ma-site-header .ma-header-nav {
-    display: flex;
-    align-items: center;
+/* --- Vertical Separator --- */
+.ma-header-separator {
+  width: 1.5px;
+  height: 38px;
+  background-color: rgba(255, 163, 236, 0.35);
+  margin-left: 25px;
+  margin-right: auto;
+  /* Pushes navigation to the right */
 }
-.ma-site-header .ma-header-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 8px;
-    align-items: center;
+
+/* --- Navigation Menu --- */
+.ma-header-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 10px;
+  /* Aligned closer to the right side of the pill */
 }
-.ma-site-header .ma-header-nav ul li {
-    margin: 0;
+
+.ma-header-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 35px;
 }
-.ma-site-header .ma-header-nav ul li a {
-    display: inline-block;
-    padding: 10px 22px;
-    border-radius: 50px;
+
+.ma-header-nav ul li {
+  position: relative;
+  padding: 8px 0;
+}
+
+.ma-header-nav ul li a {
+  font-size: 15px;
+  font-weight: 500;
+  color: #4a4a4a;
+  text-transform: capitalize;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.ma-header-nav ul li a:hover {
+  color: #FFA3EC;
+}
+
+/* Active Link State with Dot */
+.ma-header-nav ul li.mil-active a {
+  color: #FFA3EC;
+  font-weight: 600;
+}
+
+.ma-header-nav ul li.mil-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #FFA3EC;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 163, 236, 0.8);
+}
+
+/* --- Action Buttons (Cart / Profile) --- */
+.ma-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ma-action-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 163, 236, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFA3EC;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.ma-action-btn:hover {
+  background: rgba(255, 163, 236, 0.15);
+  color: #e58ad0;
+  transform: translateY(-2px);
+}
+
+.ma-action-btn .ma-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: #FFA3EC;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  padding: 0 2px;
+}
+
+/* --- Responsive Styles --- */
+@media screen and (max-width: 992px) {
+  .ma-header-nav {
+    margin-right: 20px;
+  }
+
+  .ma-header-nav ul {
+    gap: 20px;
+  }
+
+  .ma-header-nav ul li a {
+    font-size: 14px;
+  }
+
+  .ma-header-separator {
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ma-site-header {
+    top: 15px;
+    width: 95%;
+  }
+
+  .ma-header-inner-pill {
+    padding: 0 20px;
+    height: 65px;
+  }
+
+  .ma-header-separator {
+    display: none;
+  }
+
+  .ma-header-nav {
+    margin-left: auto;
+    margin-right: 15px;
+  }
+
+  .ma-header-nav ul {
+    gap: 15px;
+  }
+
+  .ma-header-nav ul li a {
     font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: rgba(255,255,255,0.85);
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    position: relative;
-    overflow: hidden;
-}
-.ma-site-header .ma-header-nav ul li a:hover {
-    color: #fff;
-    background: rgba(201,160,220,0.15);
-    transform: translateY(-2px);
-}
-.ma-site-header .ma-header-nav ul li.mil-active a {
-    color: #fff;
-    background: linear-gradient(135deg, rgba(175,130,205,0.4), rgba(255,163,236,0.35));
-    box-shadow: 0 4px 16px rgba(201,160,220,0.25);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
+  }
 
-/* Push content down so it doesn't hide behind the header */
-.mil-content {
-    padding-top: 120px;
-}
+  .ma-header-actions {
+    gap: 10px;
+  }
 
-/* Responsive */
-@media screen and (max-width: 1200px) {
-    .ma-site-header {
-        top: 15px;
-        width: 94%;
-        padding: 15px 24px;
-        height: auto;
-        min-height: 70px;
-        flex-direction: column;
-        justify-content: center;
-        border-radius: 20px;
-        background: rgba(30, 15, 45, 0.7);
-    }
-    .ma-site-header.is-scrolled {
-        top: 10px;
-        width: 96%;
-        border-radius: 16px;
-    }
-    .ma-header-inner {
-        flex-direction: column;
-        gap: 12px;
-    }
-    .ma-header-logo img {
-        height: 62px;
-    }
-    .ma-site-header.is-scrolled .ma-header-logo img {
-        height: 48px;
-    }
-    .ma-site-header .ma-header-nav ul {
-        gap: 4px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .ma-site-header .ma-header-nav ul li a {
-        font-size: 11px;
-        padding: 8px 16px;
-    }
-    .mil-content {
-        padding-top: 0;
-    }
+  .ma-action-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .ma-site-header {
-        top: 10px;
-        padding: 12px 15px;
-        border-radius: 15px;
-    }
-    .ma-header-logo img {
-        height: 52px;
-    }
-    .ma-site-header .ma-header-nav ul li a {
-        font-size: 10px;
-        padding: 6px 12px;
-    }
+  .ma-header-nav ul {
+    gap: 8px;
+  }
+
+  .ma-header-nav ul li a {
+    font-size: 11px;
+  }
+
+  .ma-header-inner-pill {
+    padding: 0 12px;
+  }
+
+  .ma-header-logo img {
+    height: 32px;
+  }
+
+  .ma-site-header.is-scrolled .ma-header-logo img {
+    height: 30px;
+  }
 }
 
 /* ============================================================
    Gallery Featured "Ver Mas" Card
    ============================================================ */
 .ma-gallery-more {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, rgba(30, 15, 45, 0.8), rgba(20, 10, 35, 0.9));
-    height: 100%;
-    min-height: 300px;
-    border-radius: 20px;
-    text-decoration: none;
-    border: 1px solid rgba(201, 160, 220, 0.2);
-    transition: all 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(30, 15, 45, 0.8), rgba(20, 10, 35, 0.9));
+  height: 100%;
+  min-height: 300px;
+  border-radius: 20px;
+  text-decoration: none;
+  border: 1px solid rgba(201, 160, 220, 0.2);
+  transition: all 0.4s ease;
 }
+
 .ma-gallery-more:hover {
-    background: linear-gradient(135deg, rgba(40, 20, 60, 0.9), rgba(30, 15, 50, 0.95));
-    border-color: rgba(201, 160, 220, 0.5);
-    box-shadow: 0 10px 30px rgba(201, 160, 220, 0.2);
-    transform: translateY(-5px);
+  background: linear-gradient(135deg, rgba(40, 20, 60, 0.9), rgba(30, 15, 50, 0.95));
+  border-color: rgba(201, 160, 220, 0.5);
+  box-shadow: 0 10px 30px rgba(201, 160, 220, 0.2);
+  transform: translateY(-5px);
 }
+
 .ma-more-content {
-    text-align: center;
-    color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
 }
+
 .ma-more-content i {
-    font-size: 40px;
-    color: rgba(201, 160, 220, 0.8);
-    margin-bottom: 15px;
-    transition: all 0.4s ease;
-    display: block;
+  font-size: 40px;
+  color: rgba(201, 160, 220, 0.8);
+  margin-bottom: 15px;
+  transition: all 0.4s ease;
+  display: block;
 }
+
 .ma-gallery-more:hover .ma-more-content i {
-    color: #fff;
-    transform: scale(1.1) rotate(90deg);
+  color: #fff;
+  transform: scale(1.1) rotate(90deg);
 }
+
 .ma-more-content span {
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
