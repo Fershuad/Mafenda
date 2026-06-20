@@ -7,7 +7,9 @@ function initGaleria() {
 
     // Function to filter gallery
     const filterGallery = (filterValue) => {
-        galleryItems.forEach(item => {
+        // Obtenemos los items frescos de la pantalla cada vez que filtramos
+        const currentGalleryItems = document.querySelectorAll('.ma-gallery-item');
+        currentGalleryItems.forEach(item => {
             if (filterValue === 'all') {
                 item.classList.remove('hidden');
             } else {

@@ -6896,9 +6896,35 @@ Contacto estilo dos columnas
 
 .ma-faq-filters {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  /* Fuerza a una sola línea */
   gap: 12px;
+  overflow-x: auto;
+  /* Permite scroll horizontal si no caben */
+  -webkit-overflow-scrolling: touch;
+
+  /* Espacio abajo y a la izquierda */
+  padding: 0 0 5px 20px;
+
+  /* Centrado seguro que evita recortes en el lado izquierdo */
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* El truco profesional para que no se pegue ni recorte en el lado derecho en móviles */
+.ma-faq-filters::after {
+  content: '';
+  flex: 0 0 20px;
+}
+
+  /* Oculta la barra de scroll para que se vea limpio */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.ma-faq-filters::-webkit-scrollbar {
+  display: none;
 }
 
 .ma-faq-filter-btn {
@@ -6919,6 +6945,8 @@ Contacto estilo dos columnas
   align-items: center;
   gap: 8px;
   box-shadow: 0 4px 15px rgba(16, 11, 33, 0.02);
+  flex-shrink: 0;
+  /* Evita que el botón se aplaste */
 }
 
 .ma-faq-filter-btn:hover {
@@ -6948,27 +6976,30 @@ Contacto estilo dos columnas
   gap: 16px;
 }
 
+.ma-faq-tag {
+  display: none !important;
+}
+
 .ma-faq-card {
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(16, 11, 33, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(16, 11, 33, 0.02);
-  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .ma-faq-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 36px rgba(16, 11, 33, 0.05);
-  border-color: rgba(165, 163, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: #e0e0e0;
 }
 
 .ma-faq-card.active {
-  background: #fff;
-  border-color: rgba(165, 163, 255, 0.35);
-  box-shadow: 0 16px 48px rgba(165, 163, 255, 0.08);
+  background: #ffffff;
+  border-color: #FFA3EC;
+  box-shadow: 0 12px 32px rgba(255, 163, 236, 0.15);
 }
 
 .ma-faq-card.active::before {
@@ -6978,36 +7009,33 @@ Contacto estilo dos columnas
   left: 0;
   width: 4px;
   height: 100%;
-  background: linear-gradient(to bottom, #FFA3EC, #A5A3FF);
+  background: #FFA3EC;
 }
 
 .ma-faq-question-btn {
   width: 100%;
-  padding: 26px 30px;
+  padding: 24px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to bottom, rgba(20, 10, 30, 0.8) 0%, rgba(20, 10, 30, 0.4) 40%, transparent 100%);
+  background: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
   font-family: inherit;
   outline: none;
-  transition: padding 0.3s ease;
 }
 
 .ma-faq-question-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: #100b21;
+  font-size: 17px;
+  font-weight: 600;
+  color: #333333;
   padding-right: 20px;
   transition: color 0.3s ease;
 }
 
 .ma-faq-card.active .ma-faq-question-title {
-  background: linear-gradient(135deg, #FF83DC, #8583FF);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #FFA3EC;
 }
 
 .ma-faq-icon-holder {
